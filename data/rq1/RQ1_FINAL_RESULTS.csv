@@ -1,0 +1,100 @@
+ID,Tool,Linked issues/commits,Root cause category,Pattern
+DOOP-1,DOOP,https://bitbucket.org/yanniss/doop/issues/42/2-object-sensitive-heap-same-doop-doop,Analysis logic,N/A
+DOOP-2,DOOP,https://bitbucket.org/yanniss/doop/issues/49/same-execution-with-different-results,Analysis logic,N/A
+DroidSafe-1,DroidSafe,https://github.com/MIT-PAC/droidsafe-src/commit/a885626ccba849518461ad6446d85ef7db73516f,Concurrency,CO-1
+FLOWDROID-1,FlowDroid,https://github.com/secure-software-engineering/FlowDroid/issues/164,Analysis logic,N/A
+FLOWDROID-2,FlowDroid,https://github.com/secure-software-engineering/FlowDroid/commit/a420a717e68714c0403fefc7648e7a86112e8fd9,Ordering of data structure,ODS-1
+FLOWDROID-3,FlowDroid,https://github.com/secure-software-engineering/FlowDroid/commit/a5c9e3495c21d803b7bab6d9c218b52d976b1d52,Concurrency,CO-2
+Infer-1,Infer,https://github.com/facebook/infer/issues/1110,Analysis logic,AL-2
+Infer-10,Infer,https://github.com/facebook/infer/commit/22ec29fabcda842d75c5f9e71b7b7bfff31eb17b,Analysis logic,N/A
+Infer-11,Infer,https://github.com/facebook/infer/commit/24e6ae9ade081e0c1a3f7527b891202d5d40d366,System-dependent or random value,SRV-1
+Infer-12,Infer,https://github.com/facebook/infer/commit/341169ff0f6fda1cd5278aac5771f9e4321ed651,Analysis logic,N/A
+Infer-13,Infer,https://github.com/facebook/infer/commit/346d3e6d0162c93b55daea8bd0bb75d0cc916df6,Analysis logic,AL-1
+Infer-14,Infer,https://github.com/facebook/infer/commit/389907f4da632851bee57a35f151bdcef1ed05ca,Concurrency,N/A
+Infer-15,Infer,https://github.com/facebook/infer/commit/41c402116268985c9d5a5aade00e637387d44d26,Concurrency,CO-3
+Infer-16,Infer,https://github.com/facebook/infer/commit/4c3679cbd37994b90a2eb75a3a6e5c5cbbdc3405,Analysis logic,AL-2
+Infer-17,Infer,https://github.com/facebook/infer/commit/567fa3f9555d269a5f9c4010c9b5a7adf304bcee,Concurrency,CO-3
+Infer-18,Infer,https://github.com/facebook/infer/commit/652cf81dab97873f0d8c79eed99219efeb487432,Dependency,N/A
+Infer-19,Infer,https://github.com/facebook/infer/commit/66d9ce1d510dfc16d03d64d0a5c94f8aafdeef71,Concurrency,CO-3
+Infer-2,Infer,https://github.com/facebook/infer/issues/1110,Analysis logic,N/A
+Infer-20,Infer,https://github.com/facebook/infer/commit/6a6d888419af05055f684f601661567d9226a2d2,Concurrency,CO-3
+Infer-21,Infer,https://github.com/facebook/infer/commit/88e6363ae1bbf2ef599f694929e1fa90859edef2,Analysis logic,AL-2
+Infer-22,Infer,https://github.com/facebook/infer/commit/89ba2cc163be8e67796033a06b32a5a2ef9f755f,Concurrency,CO-3
+Infer-23,Infer,https://github.com/facebook/infer/commit/9a2c494454074498002d6126bdac4717f93cc707,Concurrency,N/A
+Infer-24,Infer,https://github.com/facebook/infer/commit/a1381565f175be63588dac25bf76924fca705f0a,Concurrency,CO-3
+Infer-25,Infer,https://github.com/facebook/infer/commit/a477d06276fca349257ee1f5958fbea983a2918a,Analysis logic,AL-2
+Infer-26,Infer,https://github.com/facebook/infer/commit/a7bb4bd320db89f25444c0517b74836807bcdb00,Analysis logic,N/A
+Infer-27,Infer,https://github.com/facebook/infer/commit/aa8564851232e8f9496470a42f85797693e235be,Concurrency,CO-3
+Infer-28,Infer,https://github.com/facebook/infer/commit/ac158b26ea68960d67c74745f9c3e21a53d67e6d,Concurrency,CO-3
+Infer-29,Infer,https://github.com/facebook/infer/commit/afedeb646299019958a515057b63b9b7e51c49d9,Analysis logic,AL-1
+Infer-3,Infer,https://github.com/facebook/infer/issues/1110,Early termination,ET-1
+Infer-30,Infer,https://github.com/facebook/infer/commit/c10ddea51868dd108b7a6edcdaee70c4d2d18a3b,Concurrency,CO-3
+Infer-31,Infer,https://github.com/facebook/infer/commit/fd105802db6bf2a695042912cec58f0038083bed,Ordering of data structure,ODS-1
+Infer-32,Infer,https://github.com/facebook/infer/commit/e00fe73f91b0d7834d79c17bbc6f68d0f5290264,Concurrency,CO-3
+Infer-33,Infer,https://github.com/facebook/infer/commit/eb1c95a1f586b2ca079e273df9104ab485ce4fcb,Concurrency,CO-3
+Infer-34,Infer,https://github.com/facebook/infer/commit/f26573c0efbd1ea9ea462a16b60ecbc66702f17f,Analysis logic,AL-2
+Infer-35,Infer,https://github.com/facebook/infer/commit/fcd6e1494bb4aad098eb9d1c5735fdc96109f815,Analysis logic,AL-2
+Infer-4,Infer,https://github.com/facebook/infer/commit/0b5376a0a13f0ca66c026c1ef1211a701cde5aab,Analysis logic,N/A
+Infer-5,Infer,https://github.com/facebook/infer/commit/1afd05a689fe94f2e9128eba3dedb6b8e180675f,Concurrency,CO-3
+Infer-6,Infer,https://github.com/facebook/infer/commit/1b07f78e323a5591f4e3de61f986d536f9b77e0a,Concurrency,N/A
+Infer-7,Infer,https://github.com/facebook/infer/commit/1db403c51d6480773ecc8cb21dbd34e5c4e14183,Analysis logic,N/A
+Infer-8,Infer,https://github.com/facebook/infer/commit/1ea55b7fd95f48f41994b1b7953bf8f0d34bc4f2,Analysis logic,N/A
+Infer-9,Infer,https://github.com/facebook/infer/commit/1f61da1b548a88c634fd3c5bba185f6c7ea77fd1,Analysis logic,N/A
+OPAL-1,OPAL,https://github.com/opalj/opal/commit/e032cff2674a3093b93708e20c801f9b18162f24,Concurrency,N/A
+OPAL-2,OPAL,"https://github.com/opalj/opal/pull/100
+https://github.com/opalj/opal/commit/1354b63d825734c13a79a2cebc3cc2ea3dfc6c86
+https://github.com/opalj/opal/commit/ffc70050e1074c5b2a172dce34db893f9a4d6a34",Analysis logic,AL-3
+OPAL-3,OPAL,https://github.com/opalj/opal/commit/4e0fb9c53082c2480139a7eae30c7216ab4d7f91,Analysis logic,AL-3
+OPAL-4,OPAL,https://github.com/opalj/opal/commit/1207970406f30a480dc6675cceda4f5ee584bd2e,Analysis logic,N/A
+OPAL-5,OPAL,https://github.com/opalj/opal/commit/21046ad8f71277bfab7f7841855a2eb76ca3d4a2,Analysis logic,N/A
+OPAL-6,OPAL,https://github.com/opalj/opal/commit/6b48fd0ceb25d10eb1be250b23edaf2c8e0e3152,Concurrency,N/A
+OPAL-7,OPAL,https://github.com/opalj/opal/commit/d5da630eacb2dac7ac731b588ccf292a5d74f184,Analysis logic,N/A
+OPAL-8,OPAL,https://github.com/opalj/opal/commit/55cdd02cf5b4e2d5c9947070abfa61b74f4942b1,Analysis logic,AL-3
+SOOT-1,SOOT,https://github.com/soot-oss/soot/commit/fbe472a6040d805918c7719c9e1fde0d0d2b74bd,Concurrency,CO-2
+SOOT-10,SOOT,"https://github.com/soot-oss/soot/pull/1199
+https://github.com/soot-oss/soot/pull/1886",Concurrency,CO-1
+SOOT-11,SOOT,"https://github.com/soot-oss/soot/pull/1811
+https://github.com/soot-oss/soot/pull/1953",Concurrency,CO-1
+SOOT-12,SOOT,https://github.com/soot-oss/soot/pull/1309,Ordering of data structure,ODS-1
+SOOT-13,SOOT,"https://github.com/soot-oss/soot/pull/552
+https://github.com/soot-oss/soot/pull/554
+https://github.com/soot-oss/soot/pull/555",Concurrency,N/A
+SOOT-14,SOOT,https://github.com/soot-oss/soot/pull/1980,Concurrency,CO-1
+SOOT-15,SOOT,https://github.com/soot-oss/soot/pull/807/commits/1661ea8b1be8ef78c2ae57e1b8fe3c69d6040db3,Concurrency,CO-2
+SOOT-16,SOOT,https://github.com/soot-oss/soot/commit/d436b7a3bb613a0632df012e205c30e76d04650f,Ordering of data structure,ODS-1
+SOOT-17,SOOT,https://github.com/soot-oss/soot/commit/2c88b3849ee37df0fb49ce7bf1cc8efafd3ee8cf,Ordering of data structure,ODS-1
+SOOT-18,SOOT,https://github.com/soot-oss/soot/commit/44c81a4f4f9a5afdb68bb22bbb4a022d022ba778,Ordering of data structure,ODS-1
+SOOT-19,SOOT,https://github.com/soot-oss/soot/commit/f78cff79fe7d29ec6993a7aee2f292bb535d1652,Analysis logic,AL-1
+SOOT-2,SOOT,https://github.com/soot-oss/soot/pull/1802,Ordering of data structure,ODS-1
+SOOT-20,SOOT,https://github.com/soot-oss/soot/commit/077b50cdb0e9e5122445495a8cd97605b1ff7610,Concurrency,CO-1
+SOOT-21,SOOT,https://github.com/soot-oss/soot/commit/833c428a3035a45034673db6a82088a5493c38ec,Concurrency,CO-1
+SOOT-22,SOOT,https://github.com/soot-oss/soot/commit/44e65f0369c0b0d505fa6f174783ca67b6e02873,Concurrency,CO-2
+SOOT-23,SOOT,https://github.com/soot-oss/soot/commit/f679df4d3645fd6329cfb0f6304632c79dcf5f4a,Concurrency,CO-2
+SOOT-24,SOOT,https://github.com/soot-oss/soot/commit/d2e2d3c68c17eb7df04a0841093d73e02d0ba3f3,Concurrency,CO-1
+SOOT-25,SOOT,https://github.com/soot-oss/soot/commit/9c5662108b907e5919a4bab148137b209c6cfb85,Concurrency,N/A
+SOOT-26,SOOT,https://github.com/soot-oss/soot/commit/db3072ea031d8e3a3fd89333251017148c35067d,Concurrency,CO-1
+SOOT-27,SOOT,https://github.com/soot-oss/soot/commit/fe424e339f4df911c45cc8e4c11c8883e30cea0c,Concurrency,CO-1
+SOOT-28,SOOT,https://github.com/soot-oss/soot/commit/1ad74494974165e8b5f2286c90f218a00eadc243,Concurrency,CO-1
+SOOT-29,SOOT,https://github.com/soot-oss/soot/commit/a44516ca9dc5fb51d040c5d5936351b3c8729ec8,Concurrency,CO-2
+SOOT-3,SOOT,"https://github.com/soot-oss/soot/pull/1078
+https://github.com/soot-oss/soot/issues/1120
+https://github.com/soot-oss/soot/issues/1122
+https://github.com/soot-oss/soot/issues/1191
+https://github.com/soot-oss/soot/issues/1194",Concurrency,N/A
+SOOT-4,SOOT,https://github.com/soot-oss/soot/issues/997,Analysis logic,N/A
+SOOT-5,SOOT,https://github.com/soot-oss/soot/pull/1129,Analysis logic,N/A
+SOOT-6,SOOT,https://github.com/soot-oss/soot/pull/1281,System-dependent or random value,SRV-1
+SOOT-7,SOOT,https://github.com/soot-oss/soot/pull/1065,Ordering of data structure,ODS-1
+SOOT-8,SOOT,https://github.com/soot-oss/soot/pull/1337,Concurrency,N/A
+SOOT-9,SOOT,https://github.com/soot-oss/soot/pull/1016,Concurrency,CO-1
+WALA-1,WALA,https://github.com/wala/WALA/pull/904,Early termination,ET-1
+WALA-2,WALA,"https://github.com/wala/WALA/issues/88
+https://github.com/wala/WALA/issues/133
+https://github.com/wala/WALA/issues/134",System-dependent or random value,SRV-1
+WALA-3,WALA,https://github.com/wala/WALA/commit/a04a8d67dc08d3669280779b9898780f2dab00e2,Ordering of data structure,ODS-1
+WALA-4,WALA,https://github.com/wala/WALA/commit/7579f5644ae177b35364ea8bbe4e9819666ed05d,Ordering of data structure,ODS-1
+WALA-5,WALA,https://github.com/wala/WALA/commit/2ee86573af34c60fd0a5f93ff916957b90552e57,Ordering of data structure,ODS-1
+WALA-6,WALA,"https://github.com/wala/WALA/commit/f0a64f7efda90bbfb23a02245b5106f4f0fb539d
+https://github.com/wala/WALA/commit/9956ead5458896e079d007722a1f3805cd78feb8
+https://github.com/wala/WALA/commit/f1ddb98c43721555dbd5c9efdaf40d4c023038d4",System-dependent or random value,SRV-1
+WALA-7,WALA,https://github.com/wala/WALA/commit/f9aa9e6d96f748b0cc136e92b27ccb9f8d4f300b,Ordering of data structure,ODS-1
