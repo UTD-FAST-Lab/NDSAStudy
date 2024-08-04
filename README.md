@@ -10,6 +10,8 @@ In rq1/ there are:
 
 RQ1_FINAL_RESULTS.csv - Contains 85 distinct results from 7 repositories (SOOT, WALA, DOOP, OPAL, FlowDroid, DroidSafe, Infer) that fix or report nondeterminism, each result is an issue with ID, tool name, linked issues/commits, root cause category, and pattern.
 
+RQ1_ND_PATTERN_LIST.pdf - Contains 9 distinct common patterns of nondeterminism, each pattern is described with a pattern ID, description, solution, occurrence in each tool, related results, and a code example.
+
 raw_data.zip - Contains the raw commits and issues extracted from 11 repositories (SOOT, DOOP, WALA, OPAL, FlowDroid, DroidSafe, AmanDroid, TAJS, Code2Flow, PyCG, Infer).
 
 key_words_results.zip - Contains the results extracted by each keyword (concurrency, concurrent, determinism, deterministic, flakiness, flaky) from the raw data.
