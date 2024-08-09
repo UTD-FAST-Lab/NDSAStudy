@@ -3,7 +3,7 @@ Artifact for An Extensive Empirical Study of Nondeterministic Behavior in Static
 
 This repository contains the code and data for the paper titled 'An Extensive Empirical Study of Nondeterministic Behavior in Static Analysis Tools'. 
 
-The code directory contains the zipped source code of the nondeterminism detection framework (NDDetector) used in RQ2. To maintain anonymity, we have anonymized links in the source code used to access external tools and benchmarks, so the full experiments are not functional in this version of the artifact. We plan to make a submission to the artifact evaluation track upon acceptance of our paper with all the experiments working.
+The code directory contains the zipped source code of the nondeterminism detection framework used in RQ2. To maintain anonymity, we have anonymized links in the source code used to access external tools and benchmarks, so we only made a small subset of tools and benchmarks functional in this version of the artifact. We will make a submission to the artifact evaluation upon acceptance of our paper with all the experiments working.
 
 The data directory contains files that support the conclusions made in the two research questions (RQ1 and RQ2). Inside the data directory, there are two sub-directories (rq1 and rq2):
 
