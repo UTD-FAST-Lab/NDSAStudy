@@ -1,10 +1,12 @@
 # ICSE2025
 Artifact for An Extensive Empirical Study of Nondeterministic Behavior in Static Analysis Tools.
 
-This repository contains the data for the paper titled 'An Extensive Empirical Study of Nondeterministic Behavior in Static Analysis Tools,' which supports the conclusions made in the two research questions (RQ1 and RQ2).
-Additionally, we will make the source code of the nondeterminism detection framework available upon acceptance.
+This repository contains the code and data for the paper titled 'An Extensive Empirical Study of Nondeterministic Behavior in Static Analysis Tools,'. 
+re not functional in this version of the artifact. 
 
-Inside the data directory, there are two sub-directories (rq1 and rq2):
+The code directory contains the zipped source code of the nondeterminism detection framework (NDDetector) used in RQ2. To maintain anonymity, we have anonymized links in the source code used to access external tools and benchmarks, so the full experiments are not functional in this version of the artifact. We plan to make a submission to the artifact evaluation track upon acceptance of our paper with all the experiments working.
+
+The data directory contains files that support the conclusions made in the two research questions (RQ1 and RQ2). Inside the data directory, there are two sub-directories (rq1 and rq2):
 
 In rq1/ there are:
 
