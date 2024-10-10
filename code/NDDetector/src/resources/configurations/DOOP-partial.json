@@ -1,0 +1,28 @@
+{
+    "analysis": [
+      "1-call-site-sensitive",
+      "1-object-1-type-sensitive+heap",
+      "context-insensitive",
+      "context-insensitive-plus",
+      "context-insensitive-plusplus",
+      "dependency-analysis",
+      "fully-guided-context-sensitive",
+      "micro"
+    ],
+    "cs-library": [true, false],
+    "no-merge-library-objects": [true, false],
+    "no-merges": [true, false],
+    "data-flow-goto-lib": [true, false],
+    "data-flow-only-lib": [true, false],
+    "heapdl-nostrings": [true, false],
+    "only-precise-native-strings": [true, false],
+    "distinguish-reflection-only-string-constants": [true, false],
+    "distinguish-string-buffers-per-package": [true, false],
+    "reflection": [true, false],
+    "reflection-classic": [true, false],
+    "reflection-high-soundness-mode": [true, false],
+    "Xgenerics-pre": [true, false],
+    "Xreflection-coloring": [true, false],
+    "Xreflection-context-sensitivity": [true, false]
+  }
+  

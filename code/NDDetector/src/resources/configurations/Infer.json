@@ -1,0 +1,9 @@
+{
+    "dump-duplicate-symbols": [false, true],
+    "headers": [false, true],
+    "max-nesting": [1, 5, 10, 100],
+    "jobs": [1, 5, 10, 20, 50],
+    "reactive": [false, true],
+    "scheduler": ["restart", "callgraph", "file"]
+  }
+  

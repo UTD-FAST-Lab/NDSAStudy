@@ -1,0 +1,17 @@
+filetransforms,ignorenocontextflows,apicalldepth,ignoreexceptionflows,implicitflow,imprecisestrings,kobjsens,limitcontextforcomplex,limitcontextforgui,limitcontextforstrings,multipassfb,noclinitcontext,noclonestatics,nova,pta,preciseinfoflow,transfertaintfield,typesforcontext
+false,false,1,false,false,false,1,false,false,false,false,false,false,false,spark,false,paddle,paddle
+true,true,1,true,true,true,2,true,true,true,true,true,true,true,spark,true,geo,geo
+false,true,1,false,true,false,5,true,false,true,false,true,false,true,spark,false,spark,spark
+true,false,1,true,false,true,10,false,true,false,true,false,true,false,spark,true,paddle,geo
+true,false,5,false,true,true,1,false,false,true,true,false,false,true,spark,true,geo,spark
+false,true,5,true,false,false,2,true,true,false,false,true,true,false,spark,false,spark,paddle
+true,false,5,false,true,false,5,true,true,false,true,false,false,true,spark,false,paddle,geo
+false,true,5,false,true,true,10,false,false,true,false,true,true,false,spark,true,geo,paddle
+true,false,10,true,false,true,1,true,false,true,false,true,false,true,spark,false,spark,geo
+false,true,10,false,false,false,2,false,true,false,true,false,true,false,spark,true,paddle,spark
+true,false,10,true,false,true,5,false,true,false,true,false,true,true,spark,false,geo,paddle
+false,false,10,true,true,false,10,true,true,true,true,false,false,true,spark,true,spark,spark
+false,true,15,false,false,true,1,false,true,true,false,true,true,false,spark,false,paddle,paddle
+true,false,15,true,true,false,2,true,false,false,true,false,false,true,spark,true,geo,geo
+false,false,15,false,true,false,5,false,true,true,true,true,true,false,spark,true,spark,spark
+false,true,15,true,false,true,10,false,false,true,true,false,true,true,spark,false,paddle,geo

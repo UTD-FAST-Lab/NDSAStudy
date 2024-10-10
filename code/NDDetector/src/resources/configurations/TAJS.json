@@ -1,0 +1,13 @@
+context-sensitive-heap,context-specialization,determinacy,for-in,no-object-sensitivity,parameter-sensitivity,single-event-handler-type,isunsound_assume-in-operator-returns-true-when-sound-value-is-maybe-true-and-propname-is-number,isunsound_ignore-async-evals,isunsound_ignore-events-after-exceptions,isunsound_ignore-imprecise-evals,isunsound_ignore-imprecise-function-constructor,isunsound_ignore-locale,isunsound_ignore-missing-native-models,isunsound_ignore-some-prototypes-during-dynamic-property-reads,isunsound_ignore-undefined-partitions,isunsound_ignore-unlikely-property-reads,isunsound_ignore-unlikely-undefined-as-first-argument-to-addition,isunsound_no-exceptions,isunsound_no-implicit-global-var-declarations,isunsound_show-unsoundness-usage,isunsound_use-fixed-random,isunsound_use-ordered-object-keys,isunsound_use-precise-function-toString,isunsound_warn-about-all-string-coercions
+true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+true,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true
+false,true,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true
+false,false,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false
+false,true,false,true,true,false,true,true,false,false,true,true,false,false,true,true,false,false,true,true,false,false,true,true,false
+false,false,true,false,false,true,false,false,true,true,false,false,true,true,false,false,true,true,false,false,true,true,false,false,true
+true,true,false,false,false,true,true,true,true,false,true,true,false,true,false,false,true,false,true,true,false,true,false,false,true
+false,false,true,true,true,false,false,false,false,true,false,false,true,false,true,true,false,true,false,false,true,false,true,true,false
+false,true,false,false,false,false,false,false,false,true,true,true,true,true,true,true,true,false,true,true,false,true,false,false,true
+true,false,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,true,false,false,true,false,true,true,false
+false,true,false,false,false,true,false,false,true,true,false,false,true,false,false,false,false,true,true,true,true,true,true,true,true
+false,false,true,true,true,false,true,false,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false

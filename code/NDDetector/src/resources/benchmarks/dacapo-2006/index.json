@@ -1,0 +1,80 @@
+{
+  "benchmark": [
+    {
+      "name": "deps/antlr.jar",
+      "depends_on": [
+        "deps/antlr-deps.jar"
+      ],
+      "sources": [
+        "build_src/antlr"
+      ],
+      "build_script": "build_scripts/build_antlr.sh"
+    },
+    {
+      "name": "deps/bloat.jar",
+      "depends_on": [
+        "deps/bloat-deps.jar"
+      ],
+      "sources": [
+        "build_src/bloat"
+      ],
+      "build_script": "build_scripts/build_bloat.sh"
+    },
+    {
+      "name": "deps/chart.jar",
+      "depends_on": [
+        "deps/chart-deps.jar"
+      ],
+      "sources": [
+        "build_src/chart"
+      ],
+      "build_script": "build_scripts/build_chart.sh"
+    },
+    {
+      "name": "deps/fop.jar",
+      "depends_on": [
+        "deps/fop-deps.jar"
+      ],
+      "sources": [
+        "build_src/fop/fop-0.20.5/build/src/"
+      ],
+      "build_script": "build_scripts/build_fop.sh"
+    },
+    {
+      "name": "deps/hsqldb.jar",
+      "depends_on": [
+        "deps/hsqldb-deps.jar"
+      ],
+      "sources": [
+        "build_src/hsqldb"
+      ],
+      "build_script": "build_scripts/build_hsqldb.sh"
+    },
+    {
+      "name": "deps/jython.jar",
+      "depends_on": [
+        "deps/jython-deps.jar"
+      ],
+      "sources": [
+        "build_src/jython"
+      ],
+      "build_script": "build_scripts/build_jython.sh"
+    },
+    {
+      "name": "deps/pmd.jar",
+      "depends_on": [
+        "deps/pmd-deps.jar"
+      ],
+      "sources": [
+        "build_src/pmd"
+      ],
+      "build_script": "build_scripts/build_pmd.sh"
+    },
+    {
+      "name": "deps/eclipse.jar",
+      "depends_on": [
+        "deps/eclipse-deps.jar"
+      ]
+    }
+  ]
+}

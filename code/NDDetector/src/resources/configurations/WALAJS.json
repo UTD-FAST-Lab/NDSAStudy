@@ -1,0 +1,20 @@
+{
+    "reflectionSetting": [
+      "FULL",
+      "APPLICATION_GET_METHOD",
+      "NO_FLOW_TO_CASTS",
+      "NO_FLOW_TO_CASTS_APPLICATION_GET_METHOD",
+      "NO_METHOD_INVOKE",
+      "NO_FLOW_TO_CASTS_NO_METHOD_INVOKE",
+      "ONE_FLOW_TO_CASTS_NO_METHOD_INVOKE",
+      "ONE_FLOW_TO_CASTS_APPLICATION_GET_METHOD",
+      "MULTI_FLOW_TO_CASTS_APPLICATION_GET_METHOD",
+      "NO_STRING_CONSTANTS",
+      "STRING_ONLY",
+      "NONE"
+    ],
+    "handleStaticInit": [true, false],
+    "useConstantSpecificKeys": [false, true],
+    "handleCallApply": [false, true],
+    "enableCorrelationTracking": [false, true]
+  }

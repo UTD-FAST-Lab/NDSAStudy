@@ -1,0 +1,1 @@
+--aplength 10 --cgalgo VTA --dataflowsolver CONTEXTFLOWSENSITIVE --aliasflowins --singlejoinpointabstraction --staticmode NONE --nostatic --codeelimination PROPAGATECONSTS --implicit ALL --callbackanalyzer DEFAULT --maxcallbackspercomponent 5 --maxcallbacksdepth 1 --pathalgo CONTEXTSENSITIVE --taintwrapper EASY -t /FlowDroid/soot-infoflow/EasyTaintWrapperSource.txt

@@ -1,0 +1,1 @@
+--aplength 5 --cgalgo CHA --dataflowsolver CONTEXTFLOWSENSITIVE --aliasflowins --singlejoinpointabstraction --staticmode NONE --codeelimination NONE --implicit ARRAYONLY --nocallbacks --callbackanalyzer FAST --maxcallbackspercomponent 5 --maxcallbacksdepth 5 --enablereflection --pathalgo SOURCESONLY --taintwrapper NONE 

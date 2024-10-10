@@ -1,0 +1,4 @@
+{
+    "no-grouping": [true, false],
+    "no-trimming": [true, false]
+}

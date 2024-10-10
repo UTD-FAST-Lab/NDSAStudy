@@ -1,0 +1,1 @@
+--analysis dependency-analysis --data-flow-goto-lib --heapdl-nostrings --only-precise-native-strings --reflection --reflection-classic --Xgenerics-pre
