@@ -6,7 +6,7 @@ class DOOPTaskGenerator(AbstractTaskToolGenerator):
     def __init__(self):
         a="";
     def read_config_and_generate_jobs(self,benchmark_records):
-        configfile="/ECSTATIC/src/resources/configurations/DOOP-2way-covered-partial.csv"
+        configfile="/ECSTATIC/src/resources/configurations/DOOP-2way-covered.csv"
         job_list = []
 
         header = []
