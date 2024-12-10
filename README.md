@@ -1,5 +1,4 @@
-# ICSE2025
-Artifact for An Extensive Empirical Study of Nondeterministic Behavior in Static Analysis Tools.
+# The Artifacts for An Extensive Empirical Study of Nondeterministic Behavior in Static Analysis Tools.
 
 This repository contains the code and data for the paper titled 'An Extensive Empirical Study of Nondeterministic Behavior in Static Analysis Tools'. 
 
