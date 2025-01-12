@@ -1,7 +1,0 @@
-{
-    "static_init": [true, false],
-    "parallel": [true, false],
-    "k_context": [1, 5, 10],
-    "module": ["COMMUNICATION_LEAKAGE", "TOKEN_TRACKING", "PASSWORD_TRACKING", "INTENT_INJECTION", "DATA_LEAKAGE"],
-    "approach": ["COMPONENT_BASED", "BOTTOM_UP"]
-}

@@ -1,1 +1,0 @@
---dump-duplicate-symbols --max-nesting 5 --jobs 5 --scheduler file

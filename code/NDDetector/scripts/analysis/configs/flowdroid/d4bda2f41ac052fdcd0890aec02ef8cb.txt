@@ -1,1 +1,0 @@
---aplength 5 --cgalgo RTA --nothischainreduction --dataflowsolver CONTEXTFLOWSENSITIVE --staticmode CONTEXTFLOWINSENSITIVE --nostatic --codeelimination PROPAGATECONSTS --implicit ARRAYONLY --nocallbacks --callbackanalyzer FAST --maxcallbackspercomponent 10 --maxcallbacksdepth 1 --pathalgo SOURCESONLY --noexceptions --taintwrapper NONE 

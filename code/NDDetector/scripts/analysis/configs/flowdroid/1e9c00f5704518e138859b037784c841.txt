@@ -1,1 +1,0 @@
---aplength 5 --cgalgo SPARK --nothischainreduction --dataflowsolver FLOWINSENSITIVE --staticmode CONTEXTFLOWSENSITIVE --nostatic --codeelimination REMOVECODE --implicit NONE --callbackanalyzer DEFAULT --maxcallbackspercomponent 10 --maxcallbacksdepth 5 --pathalgo CONTEXTSENSITIVE --taintwrapper NONE 

@@ -1,1 +1,0 @@
---aplength 1 --cgalgo VTA --nothischainreduction --dataflowsolver FLOWINSENSITIVE --aliasflowins --singlejoinpointabstraction --staticmode CONTEXTFLOWINSENSITIVE --codeelimination NONE --implicit NONE --nocallbacks --callbackanalyzer FAST --maxcallbackspercomponent 10 --maxcallbacksdepth 5 --pathalgo CONTEXTINSENSITIVE --noexceptions --taintwrapper NONE 

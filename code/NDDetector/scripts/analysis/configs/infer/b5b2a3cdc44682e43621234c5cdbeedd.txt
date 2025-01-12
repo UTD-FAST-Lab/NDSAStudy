@@ -1,1 +1,0 @@
---dump-duplicate-symbols --max-nesting 100 --jobs 1 --reactive --scheduler restart

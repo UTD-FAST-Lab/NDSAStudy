@@ -1,1 +1,0 @@
---analysis 1-object-1-type-sensitive+heap --data-flow-goto-lib --heapdl-nostrings --only-precise-native-strings --distinguish-string-buffers-per-package --reflection-high-soundness-mode --Xreflection-coloring --Xreflection-context-sensitivity

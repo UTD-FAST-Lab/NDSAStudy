@@ -1,1 +1,0 @@
---dump-duplicate-symbols --headers --max-nesting 1 --jobs 10 --reactive --scheduler file

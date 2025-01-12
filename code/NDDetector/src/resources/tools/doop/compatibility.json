@@ -1,4 +1,0 @@
-{
-  "benchmarks": ["dacapo", "sensitivity"],
-  "tasks": ["cg"]
-}

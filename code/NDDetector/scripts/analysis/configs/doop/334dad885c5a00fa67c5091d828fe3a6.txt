@@ -1,1 +1,0 @@
---analysis context-insensitive-plus --cs-library --no-merge-library-objects --no-merges --data-flow-only-lib --distinguish-reflection-only-string-constants --distinguish-string-buffers-per-package --reflection-high-soundness-mode --Xreflection-coloring --Xreflection-context-sensitivity

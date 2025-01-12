@@ -1,1 +1,0 @@
---aplength 5 --cgalgo GEOM --nothischainreduction --dataflowsolver CONTEXTFLOWSENSITIVE --singlejoinpointabstraction --staticmode CONTEXTFLOWSENSITIVE --codeelimination REMOVECODE --implicit ALL --nocallbacks --callbackanalyzer FAST --maxcallbackspercomponent 5 --maxcallbacksdepth 1 --pathalgo CONTEXTINSENSITIVE --taintwrapper NONE 

@@ -1,1 +1,0 @@
---aplength 1 --cgalgo SPARK --dataflowsolver CONTEXTFLOWSENSITIVE --staticmode CONTEXTFLOWINSENSITIVE --nostatic --codeelimination PROPAGATECONSTS --implicit NONE --callbackanalyzer DEFAULT --maxcallbackspercomponent 5 --maxcallbacksdepth 1 --enablereflection --pathalgo SOURCESONLY --noexceptions --taintwrapper NONE 

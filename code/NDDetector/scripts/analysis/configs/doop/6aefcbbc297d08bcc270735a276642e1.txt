@@ -1,1 +1,0 @@
---analysis 1-call-site-sensitive --cs-library --no-merge-library-objects --data-flow-goto-lib --heapdl-nostrings --distinguish-reflection-only-string-constants --reflection --reflection-high-soundness-mode --Xreflection-coloring
