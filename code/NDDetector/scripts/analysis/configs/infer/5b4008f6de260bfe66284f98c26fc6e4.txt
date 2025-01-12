@@ -1,0 +1,1 @@
+--dump-duplicate-symbols --headers --max-nesting 10 --jobs 50 --scheduler file

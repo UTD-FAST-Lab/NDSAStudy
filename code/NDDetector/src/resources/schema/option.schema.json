@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "option.schema.json",
+  "title": "Option",
+  "description": "An option in a configuration space.",
+  "type": "object",
+  "required": ["name", "levels"],
+  "properties": {
+    "name": {
+      "description": "The name of the option.",
+      "type": "string"
+    },
+    "levels": {
+      "description": "The levels in the option.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "unique": true
+    },
+    "default": {
+      "description": "The default setting (if it has one).",
+      "type": "string"
+    },
+    "orders": {
+      "description": "The partial orders in the option.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "left": {
+            "description": "The first level.",
+            "type": "string"
+          },
+          "order": {
+            "description": "The partial order relationship.",
+            "type": "string",
+            "enum": ["MST", "MPT"]
+          },
+          "right": {
+            "description": "The second level.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "tags": {
+      "description": "Optional tags that can be used when constructing or selecting configurations.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+     "type": {
+      "description": "The type of data the level can accept.",
+      "type": "string",
+      "enum": ["integer", "enum"]
+    },
+    "min_value": {
+      "description": "If an int, the minimum value it can take on.",
+      "type": "integer"
+    },
+    "max_value": {
+      "description": "The largest value allowed for an int.",
+      "type": "integer"
+    }
+  }
+}

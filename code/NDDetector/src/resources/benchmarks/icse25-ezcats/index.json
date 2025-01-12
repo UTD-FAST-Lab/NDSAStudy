@@ -1,0 +1,11 @@
+{
+    "benchmark": [
+      {
+        "name": "TypeCasts/TC1/target/TC1.jar",
+        "sources": [
+          "TypeCasts/TC1/src"
+        ],
+        "build_script": "TypeCasts/TC1/build.sh"
+      }
+    ]
+  }

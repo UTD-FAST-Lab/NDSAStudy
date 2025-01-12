@@ -1,0 +1,1 @@
+--aplength 1 --cgalgo RTA --dataflowsolver FLOWINSENSITIVE --staticmode NONE --codeelimination REMOVECODE --implicit NONE --callbackanalyzer DEFAULT --maxcallbackspercomponent 5 --maxcallbacksdepth 10 --enablereflection --pathalgo CONTEXTINSENSITIVE --taintwrapper EASY -t /FlowDroid/soot-infoflow/EasyTaintWrapperSource.txt

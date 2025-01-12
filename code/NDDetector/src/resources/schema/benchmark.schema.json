@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "benchmark.schema.json",
+  "title": "Benchmark",
+  "description": "A benchmark specification.",
+  "type": "object",
+  "properties": {
+    "whole-program": {
+      "description": "Whether to use whole-program mode.",
+      "type": "string"
+    },
+    "benchmark": {
+      "description": "The name of the level.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "description": "The name of the benchmark",
+            "type": "string"
+          },
+          "depends_on": {
+            "description": "List of any artifacts this benchmark depends on.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sources": {
+            "description": "The location of the sources.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "build_script": {
+            "description": "The location of the build script.",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

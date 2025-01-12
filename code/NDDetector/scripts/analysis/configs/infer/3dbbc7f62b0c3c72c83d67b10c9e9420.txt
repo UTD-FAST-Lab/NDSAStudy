@@ -1,0 +1,1 @@
+--max-nesting 100 --jobs 50 --reactive --scheduler callgraph
