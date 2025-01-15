@@ -223,7 +223,7 @@ dispatcher -t flowdroid -b icse25-ezbench --tasks taint -i 5
 To run SOOT on `icse25-ezcats` using Strategy I, run the following command:
 
 ```commandline
-# Expected running time is around 10-15 minutes.
+# Expected running time is around 10-20 minutes.
 dispatcher -t soot -b icse25-ezcats --tasks cg -i 5
 ```
 where `-i 5` can be configured to the number of iterations you wish to run. This will create a `results` folder. Details on how to read the contents of this folder are below.
@@ -266,6 +266,7 @@ Configurations in the results are represented as hash values. You can see what c
 
 The results of non-determinism detection can be found in the `non-determinism` folder. This folder maintains all non-deterministic results across 5 iterations, each batch of results is stored under a folder named as `configration-hash_apk-name.apk.raw`.
 
+***Note: The detected nondeterminism may vary across experiments for the same tool-benchmark pair.***
 In our example, one detected non-determinism is on `JavaThread2.apk` under configuration  `7b5480bdb06b2ff39ebfb2bcedd2f657`.
 
 #### Detecting Nondeterminism Using Strategy II
@@ -279,19 +280,22 @@ dispatcher -t flowdroid -b icse25-ezbench --tasks taint -i 5 --results ./results
 To run SOOT on `icse25-ezcats` using Strategy II, run the following command:
 
 ```commandline
-# Expected running time is around 10-15 minutes.
+# Expected running time is around 10-20 minutes.
 dispatcher -t soot -b icse25-ezcats --tasks cg -i 5 --results ./results_II --nondex
 ```
 This will create a `results_II` folder. The results of non-determinism detection can be found in the `results_II/non-determinism` folder.
 
 Then, navigate to the `scripts/analysis` directory. 
+The script `detector_strategy_2.py` is used to detect additional nondeterminisms from the Strategy II results (as discussed at the end of Section IV.A.d in our paper).
 
-Use the following command to detect additional nondeterminisms from the Strategy II results:
+Run the following command to detect the additional nondeterminisms for FlowDroid and SOOT:
 
 ```
-python detector_strategy_2.py --origin <path-to-strategy-I-results-folder> --nondex <path-to-strategy-II-results-folder> <tool> <benchmark> <task> <iteration>
+python detector_strategy_2.py --origin ./results --nondex ./results_II flowdroid icse25-ezbench taint 5
+python detector_strategy_2.py --origin ./results --nondex ./results_II soot icse25-ezcats cg 5
 ```
-This command outputs the detected additional nondeterminisms to the `scripts/analysis/results/non_determinism_2` folder.
+
+These commands output the detected additional nondeterminisms to the `scripts/analysis/results/non_determinism_2` folder.
 
 
 #### Post-processing Results
