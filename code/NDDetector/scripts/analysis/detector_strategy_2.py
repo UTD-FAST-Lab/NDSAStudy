@@ -41,22 +41,16 @@ def checkResults(origin, nondex, o_not_nondeterminism, task, tool, benchmark, it
     reader = ReaderFactory.get_reader_for_task_and_tool(task, tool)
     
     for file in o_not_nondeterminism:
-        nondeterminism = False
-        error = False
         
         file_s = f'{origin}/{tool}/{benchmark}/iteration0/{file}'
         if not os.path.exists(file_s):
             print(file_s + " not exist")
-            error = True
-            nondeterminism = True
             move_nd_files(origin, nondex, file, tool, benchmark, iteration)
         else:
             results_s = generate_comparable_results(tool, file_s, reader)
         
             for campaign_index in range(iteration):
                 if not os.path.exists(f'{nondex}/{tool}/{benchmark}/iteration{campaign_index}/{file}'):
-                    error = True
-                    nondeterminism = True
                     move_nd_files(origin, nondex, file, tool, benchmark, iteration)
                     break
                 else:
@@ -64,7 +58,6 @@ def checkResults(origin, nondex, o_not_nondeterminism, task, tool, benchmark, it
                     results_t = generate_comparable_results(tool, file_t, reader)
 
                     if not results_s == results_t:
-                        nondeterminism = True
                         move_nd_files(origin, nondex, file, tool, benchmark, iteration)
                         break
     
@@ -88,10 +81,12 @@ def main():
     iteration = args.iteration
     
     o_nondeterminism = set()
-    origin_nd_results_dir = os.path.join(origin, f"non_determinism/{tool}/{benchmark}")
-    
-    for result in os.listdir(origin_nd_results_dir):
-        o_nondeterminism.add(result)
+
+    if os.path.exists(os.path.join(origin, f"non_determinism/{tool}/{benchmark}")):
+        origin_nd_results_dir = os.path.join(origin, f"non_determinism/{tool}/{benchmark}")
+
+        for result in os.listdir(origin_nd_results_dir):
+            o_nondeterminism.add(result)
     
     o_not_nondeterminism = set()
     origin_results_dir = os.path.join(origin, f"{tool}/{benchmark}/iteration0")
