@@ -14,7 +14,10 @@
     - [Instructions](#instructions)
   - [Usage](#usage)
     - [Basic Usage Example](#basic-usage-example)
+      - [Detecting Nondeterminism Using Strategy I](#detecting-nondeterminism-using-strategy-i)
       - [How to Read Output](#how-to-read-output)
+      - [Detecting Nondeterminism Using Strategy II](#detecting-nondeterminism-using-strategy-ii)
+      - [Post-processing Results](#post-processing-results)
     - [Replicating Major Paper Results](#replicating-major-paper-results)
     - [Post-processing Results](#post-processing-results)
     
@@ -320,7 +323,7 @@ python post_process.py --path ../../results/non_determinism soot icse25-ezcats
 # if any additional nondeterminism is detected by running SOOT on icse25-ezcats using Strategy II
 python post_process.py --path ./results/non_determinism_2 soot icse25-ezcats --nondex
 ```
-Each command generates a CSV file in the `scripts/analysis/results/postprocess` folder (if the provided nondeterminism folder exists). It calculates the percentage of consistent results and the number of distinct results.
+Each command generates a CSV file named `<tool>_<benchmark>.csv` or `<tool>_<benchmark>_nondex.csv` in the `scripts/analysis/results/postprocess` folder (if the provided nondeterminism folder exists). It calculates the percentage of consistent results and the number of distinct results.
 
 ### Replicating Major Paper Results
 
