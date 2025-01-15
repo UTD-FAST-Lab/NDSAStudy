@@ -30,8 +30,8 @@ Purpose: a brief description of what the artifact does.
 This artifact contains the code and data for the paper titled ***An Extensive 
 Empirical Study of Nondeterministic Behavior in Static Analysis Tools***.
 
-The `code` directory contains the zipped source code of the nondeterminism detection 
-framework used in RQ2. 
+The `code` directory contains the zipped source code of the non-determinism detection 
+framework (NDDetector) used in RQ2. 
 
 The `data` directory contains files that support the conclusions made in the two research 
 questions (RQ1 and RQ2). 
@@ -55,7 +55,7 @@ The artifact as reported in the original paper is available on Zenodo
 (https://doi.org/10.5281/zenodo.14630151). 
 
 A pre-print of the original paper referencing this artifact can be found here:
-https://annabellam.github.io/docs/An_Extensive_Empirica_Study_of_Nondeterministic_Behavior_in_Static_Analysis_Tools_-_Preprint.pdf.
+[An Extensive Empirical Study of Nondeterministic Behavior in Static Analysis Tools](https://annabellam.github.io/docs/An_Extensive_Empirica_Study_of_Nondeterministic_Behavior_in_Static_Analysis_Tools_-_Preprint.pdf).
 
 ## Data
 
@@ -104,6 +104,13 @@ the artifact for execution. This includes:
   strongly encouraged. Any deviation from standard environments needs to be
   reasonably justified.
 -->
+
+The `code` directory contains the zipped source code of the non-determinism detection 
+framework (NDDetector) used in RQ2.
+
+NDDetector is a flexible tool that can be used to detect non-deterministic behaviors in configurable static analysis on a variety of benchmarks. 
+NDDetector can be extended to use alternative analyses, but currently, it can run call graph analyses using WALA, SOOT, DOOP, OPAL, TAJS, PyCG, and Code2Flow, 
+taint analysis on Android applications using FlowDroid, AmanDroid, and DroidSafe, as well as vulnerability detection on C programs using Infer.
 
 ### Requirements
 
