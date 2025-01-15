@@ -162,6 +162,30 @@ container creation.)
 
 Simply run `dispatcher --help` from anywhere in order to see the help doc on how to invoke the detection toolchain.
 
+The description for the arguments/options of the `dispatcher` are as follows:
+
+```
+options:
+  -h, --help            Show this help message and exit.
+  -t, --tools           Static analysis tools to run. Options:
+                        {flowdroid,amandroid,droidsafe,soot,wala,doop,opal,code2flow,pycg,tajs,wala-js,infer} 
+  -b, --benchmarks      Benchmark programs to run, incompatible tool and benchmark pairs will be skipped. Options:
+                        {icse25-ezbench,droidbench,fossdroid-all-apks,icse25-ezcats,cats-microbenchmark,dacapo-2006,pycg-micro,pycg-macro,sunspider_test,jquery,
+                         itc-benchmarks,openssl,toybox,sqlite} 
+  --tasks               Currently a useless option as all tools only support one task. However, this is meant to provide support for tools
+                        that might allow multiple tasks. Options:
+                        {cg,taint,violation}
+  --no-cache, -n        Build images without cache.
+  --jobs JOBS, -j JOBS  Number of jobs to spawn in each container.
+  --iterations ITERATIONS, -i ITERATIONS
+                        Number of iterations to run.
+  --timeout TIMEOUT     The timeout to pass to the static analysis tool in minutes.
+  --verbose, -v         Level of verbosity (more v's gives more output)
+  --results RESULTS     Location to write results.
+  --nondex              Run java tools with NonDex.
+```
+
+
 ## Usage
 
 <!--
@@ -174,15 +198,15 @@ both:
 - Detailed commands to replicate the major results from the paper.
 -->
 
-***For artifact reviewers:*** These experiments took thousands of hours of machine time to perform. 
-We provide smaller experiments to verify the functionality of the artifact in the `Basic Usage Example` section.
+***For artifact reviewers:*** 
+We provide smaller experiments to verify the functionality of the artifact in the `Basic Usage Example` section, as replicating the major paper results is expected to take thousands of hours of machine time.
 
 ### Basic Usage Example
 
 We suggest artifact reviewers use FlowDroid or SOOT, as these tools are relatively faster and more likely to exhibit nondeterministic behaviors compare to other tools, which tend to be slower to build, require significant system memory, or are challenging for capturing nondeterminism.
 
 We have provided small versions of the Droidbench and CATS Microbenchmark under the names `icse25-ezbench` and 
-`icse25-ezcats`, respectively. These benchmarks each contain one program which exhibited nondeterministic behaviors:
+`icse25-ezcats`, respectively. These benchmarks each contain one program that exhibited nondeterministic behaviors:
 
 - `icse25-ezbench` contains *JavaThread2.apk*.
 - `icse25-ezcats` contains *TC1.jar*.
@@ -234,6 +258,8 @@ Configurations in the results are represented as hash values. You can see what c
 The results of non-determinism detection can be found in the `non-determinism` folder. This folder maintains all non-deterministic results across 5 iterations, each batch of results is stored under a folder named as `configration-hash_apk-name.apk.raw`.
 
 In our example, one detected non-determinism is on `JavaThread2.apk` under configuration  `7b5480bdb06b2ff39ebfb2bcedd2f657`.
+
+
 
 ### Replicating Major Paper Results
 
