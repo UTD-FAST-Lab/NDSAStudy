@@ -253,7 +253,7 @@ results
 |  |  |  |- 1e9c00f5704518e138859b037784c841_JavaThread2-debug.apk.raw
 |  |  |  |- 3d42058705611ed0e83612b6dff38a35_JavaThread2-debug.apk.raw
 |  |  |  |- ...
-|- non-determinism
+|- non_determinism
 |  |- flowdroid
 |  |  |- icse25-ezbench
 |  |  |  |- 7b5480bdb06b2ff39ebfb2bcedd2f657_JavaThread2.apk.raw
@@ -266,7 +266,9 @@ The results of each iteration are stored in their respective folders. For each c
 
 Configurations in the results are represented as hash values. You can see what configuration a hash value represents by looking in the configuration folder. In this example, configuration 1e9c00f5704518e138859b037784c841 corresponds to the configuration `--aplength 10 --cgalgo RTA --nothischainreduction --dataflowsolver CONTEXTFLOWSENSITIVE --aliasflowins --singlejoinpointabstraction --staticmode CONTEXTFLOWSENSITIVE --nostatic --codeelimination PROPAGATECONSTS --implicit ALL --callbackanalyzer FAST --maxcallbackspercomponent 1 --maxcallbacksdepth 1 --enablereflection --pathalgo CONTEXTSENSITIVE --taintwrapper NONE`
 
-The results of non-determinism detection can be found in the `non-determinism` folder. This folder maintains all non-deterministic results across 5 iterations, each batch of results is stored under a folder named as `configration-hash_apk-name.apk.raw`.
+The results of non-determinism detection can be found in the `non_determinism` folder *(if any nondeterminism is detected)*. 
+
+This folder maintains all non-deterministic results across 5 iterations, each batch of results is stored under a folder named as `configration-hash_apk-name.apk.raw`.
 
 ***Note: The detected nondeterminism may vary across experiments for the same tool-benchmark pair.***
 In our example, one detected non-determinism is on `JavaThread2.apk` under configuration  `7b5480bdb06b2ff39ebfb2bcedd2f657`.
@@ -285,7 +287,7 @@ To run SOOT on `icse25-ezcats` using Strategy II, run the following command:
 # Expected running time is around 60-90 minutes.
 dispatcher -t soot -b icse25-ezcats --tasks cg -i 5 --results ./results_II --nondex
 ```
-This will create a `results_II` folder. The results of non-determinism detection can be found in the `results_II/non-determinism` folder.
+This will create a `results_II` folder. The results of non-determinism detection can be found in the `results_II/non_determinism` folder *(if any nondeterminism is detected)*.
 
 Then, navigate to the `scripts/analysis` directory. 
 The script `detector_strategy_2.py` is used to detect additional nondeterminisms from the Strategy II results (as discussed at the end of Section IV.A.d in our paper).
@@ -297,23 +299,39 @@ python detector_strategy_2.py --origin ../../results --nondex ../../results_II f
 python detector_strategy_2.py --origin ../../results --nondex ../../results_II soot icse25-ezcats cg 5
 ```
 
-These commands output the detected additional nondeterminisms to the `scripts/analysis/results/non_determinism_2` folder.
+These commands output the detected additional nondeterminisms to the `scripts/analysis/results/non_determinism_2` folder *(if any additional nondeterminism is detected)*.
 
 #### Post-processing Results
 
-Navigate to the `scripts/analysis` directory. 
+In the `scripts/analysis` directory, the script `post_process.py` aggregates the detected nondeterminism results for each specified tool-benchmark pair for both strategies.
 
-The script `post_process.py` is used to aggregate results for each specified tool-benchmark pair.
+Run the following commands to generate aggregated results for all nondeterminisms detected above:
 
-Run the following commands to generate aggregated results for 
+```
+# if any nondeterminism is detected by running FlowDroid on icse25-ezbench using Strategy I
+python post_process.py --path ../../results/non_determinism flowdroid icse25-ezbench
 
+# if any additional nondeterminism is detected by running FlowDroid on icse25-ezbench using Strategy II
+python post_process.py --path ./results/non_determinism_2 flowdroid icse25-ezbench --nondex
+
+# if any nondeterminism is detected by running SOOT on icse25-ezcats using Strategy I
+python post_process.py --path ../../results/non_determinism soot icse25-ezcats
+
+# if any additional nondeterminism is detected by running SOOT on icse25-ezcats using Strategy II
+python post_process.py --path ./results/non_determinism_2 soot icse25-ezcats --nondex
+```
+Each command generates a CSV file in the `scripts/analysis/results/postprocess` folder (if the provided nondeterminism folder exists). It calculates the percentage of consistent results and the number of distinct results.
 
 ### Replicating Major Paper Results
 
-The following 24 commands will run experiments for all tool/benchmark combinations using Strategy I, excluding PyCG. 
+The following 24 commands will run experiments for all tool/benchmark combinations using Strategy I, excluding PyCG. Alternatively, you can execute the shell script `run_all_s1.sh`. 
+Replicating the major results from the paper is expected to require thousands of hours of machine time and significant system memory. Please ensure that sufficient computing resources are available before running these commands. For reference, the experiments in our paper were conducted on two servers:  
 
-*Note that as of this writing, PyCG experiments cannot be performed due to errors encountered when running on the Ubuntu system. 
-Additionally, PyCG has been archived and is no longer maintained by its development team.*
+- *Server 1*: 384GB of RAM, 2 Intel Xeon Gold 5218 16-core CPUs @ 2.30GHz.  
+- *Server 2*: 144GB of RAM, 2 Intel Xeon Silver 4116 12-core CPUs @ 2.10GHz.  
+
+*Note that as of this writing, PyCG experiments cannot be replicated due to errors encountered when running PyCG on the Ubuntu system. 
+We haven't been able able to fix it because PyCG has been archived and is no longer maintained by its development team.*
 
 ```commandline
 dispatcher -t flowdroid -b droidbench --task taint -j 10 -i 5 --timeout 5
