@@ -14,7 +14,7 @@
     - [Instructions](#instructions)
   - [Usage](#usage)
     - [Basic Usage Example](#basic-usage-example)
-    - [How to Read Output](#how-to-read-output)
+      - [How to Read Output](#how-to-read-output)
     - [Replicating Major Paper Results](#replicating-major-paper-results)
     - [Post-processing Results](#post-processing-results)
     
@@ -31,7 +31,7 @@ This artifact contains the code and data for the paper titled ***An Extensive
 Empirical Study of Nondeterministic Behavior in Static Analysis Tools***.
 
 The `code` directory contains the zipped source code of the non-determinism detection 
-framework (*NDDetector*) used in RQ2. 
+toolchain (*NDDetector*) used in RQ2. 
 
 The `data` directory contains files that support the conclusions made in the two research 
 questions (RQ1 and RQ2). 
@@ -106,7 +106,7 @@ the artifact for execution. This includes:
 -->
 
 The `code` directory contains the zipped source code of the non-determinism detection 
-framework (*NDDetector*) used in RQ2.
+toolchain (*NDDetector*) used in RQ2.
 
 *NDDetector* is a flexible tool that can be used to detect non-deterministic behaviors in configurable static analysis on a variety of benchmarks. 
 *NDDetector* can be extended to use alternative analyses, but currently, it can run call graph analyses using WALA, SOOT, DOOP, OPAL, TAJS, PyCG, and Code2Flow, 
@@ -211,19 +211,28 @@ We have provided small versions of the Droidbench and CATS Microbenchmark under 
 - `icse25-ezbench` contains *JavaThread2.apk*.
 - `icse25-ezcats` contains *TC1.jar*.
 
-For example, to run FlowDroid on `droidbench-small`, run the following command:
+#### Detecting Nondeterminism Using Strategy I
+
+For example, to run FlowDroid on `icse25-ezbench` using Strategy I (as discussed in Section IV.A.d in our paper), run the following command:
 
 ```commandline
+# Expected running time is around 10-15 minutes.
 dispatcher -t flowdroid -b icse25-ezbench --tasks taint -i 5
 ```
 
+To run SOOT on `icse25-ezcats` using Strategy I, run the following command:
+
+```commandline
+# Expected running time is around 10-15 minutes.
+dispatcher -t soot -b icse25-ezcats --tasks cg -i 5
+```
 where `-i 5` can be configured to the number of iterations you wish to run. This will create a `results` folder. Details on how to read the contents of this folder are below.
 
-### How to Read Output
+#### How to Read Output
 
 By default, the output will be stored at a *results* folder, but the location of the results can be controlled with the `--results-location` option.
 
-We explain the structure of the results through the example above, where we run FlowDroid on the `icse25-ezbench` benchmark.
+We explain the structure of the results through the FlowDroid example above, where we run FlowDroid on the `icse25-ezbench` benchmark.
 
 ```commandline
 results
@@ -258,6 +267,34 @@ Configurations in the results are represented as hash values. You can see what c
 The results of non-determinism detection can be found in the `non-determinism` folder. This folder maintains all non-deterministic results across 5 iterations, each batch of results is stored under a folder named as `configration-hash_apk-name.apk.raw`.
 
 In our example, one detected non-determinism is on `JavaThread2.apk` under configuration  `7b5480bdb06b2ff39ebfb2bcedd2f657`.
+
+#### Detecting Nondeterminism Using Strategy II
+
+To run FlowDroid on `icse25-ezbench` using Strategy II (as discussed in Section IV.A.d in our paper), run the following command:
+
+```commandline
+# Expected running time is around 10-15 minutes.
+dispatcher -t flowdroid -b icse25-ezbench --tasks taint -i 5 --results ./results_II --nondex
+```
+To run SOOT on `icse25-ezcats` using Strategy II, run the following command:
+
+```commandline
+# Expected running time is around 10-15 minutes.
+dispatcher -t soot -b icse25-ezcats --tasks cg -i 5 --results ./results_II --nondex
+```
+This will create a `results_II` folder. The results of non-determinism detection can be found in the `results_II/non-determinism` folder.
+
+Then, navigate to the `scripts/analysis` directory. 
+
+Use the following command to detect additional nondeterminisms from the Strategy II results:
+
+```
+python detector_strategy_2.py --origin <path-to-strategy-I-results-folder> --nondex <path-to-strategy-II-results-folder> <tool> <benchmark> <task> <iteration>
+```
+This command outputs the detected additional nondeterminisms to the `scripts/analysis/results/non_determinism_2` folder.
+
+
+#### Post-processing Results
 
 
 
