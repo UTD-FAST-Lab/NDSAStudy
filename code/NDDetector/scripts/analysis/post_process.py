@@ -58,6 +58,10 @@ def diff_code2flow(fpath, super_set, common_set, diff_set):
 
 
 def diff_flowdroid(args):
+    if not os.path.exists(os.path.join(args.path, f"{args.tool}/{args.benchmark}")):
+        print(f"No nondeterminism results found for {args.tool} and {args.benchmark}")
+        return
+
     nd_results_path = os.path.join(args.path, f"{args.tool}/{args.benchmark}")
     results = []
     for nd in os.listdir(nd_results_path):
@@ -268,7 +272,7 @@ def diff_parallel(args):
         
     args_list = [(args.tool, n) for n in nondeterminism_list]
             
-    with Pool(20) as p:
+    with Pool(num_cores) as p:
         for r in tqdm(p.imap(diff, args_list), total=len(args_list)):
             results.extend(r)
     print(f'Checking finished (time {time.time() - campaign_start_time} seconds)')
