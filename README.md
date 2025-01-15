@@ -31,7 +31,7 @@ This artifact contains the code and data for the paper titled ***An Extensive
 Empirical Study of Nondeterministic Behavior in Static Analysis Tools***.
 
 The `code` directory contains the zipped source code of the non-determinism detection 
-framework (NDDetector) used in RQ2. 
+framework (*NDDetector*) used in RQ2. 
 
 The `data` directory contains files that support the conclusions made in the two research 
 questions (RQ1 and RQ2). 
@@ -106,10 +106,10 @@ the artifact for execution. This includes:
 -->
 
 The `code` directory contains the zipped source code of the non-determinism detection 
-framework (NDDetector) used in RQ2.
+framework (*NDDetector*) used in RQ2.
 
-NDDetector is a flexible tool that can be used to detect non-deterministic behaviors in configurable static analysis on a variety of benchmarks. 
-NDDetector can be extended to use alternative analyses, but currently, it can run call graph analyses using WALA, SOOT, DOOP, OPAL, TAJS, PyCG, and Code2Flow, 
+*NDDetector* is a flexible tool that can be used to detect non-deterministic behaviors in configurable static analysis on a variety of benchmarks. 
+*NDDetector* can be extended to use alternative analyses, but currently, it can run call graph analyses using WALA, SOOT, DOOP, OPAL, TAJS, PyCG, and Code2Flow, 
 taint analysis on Android applications using FlowDroid, AmanDroid, and DroidSafe, as well as vulnerability detection on C programs using Infer.
 
 ### Requirements
