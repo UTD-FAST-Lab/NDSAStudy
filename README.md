@@ -17,9 +17,9 @@
       - [Detecting Nondeterminism Using Strategy I](#detecting-nondeterminism-using-strategy-i)
       - [How to Read Output](#how-to-read-output)
       - [Detecting Nondeterminism Using Strategy II](#detecting-nondeterminism-using-strategy-ii)
-      - [Post-processing Results](#post-processing-results)
+      - [Post-processing Results](#post-processing-results-1)
     - [Replicating Major Paper Results](#replicating-major-paper-results)
-    - [Post-processing Results](#post-processing-results)
+    - [Post-processing Results](#post-processing-results-2)
     
 
 ## Purpose
@@ -373,7 +373,7 @@ dispatcher -t code2flow -b pycg-micro --task cg -j 10 -i 10 --timeout 5
 dispatcher -t code2flow -b pycg-macro --task cg -j 10 -i 10 --timeout 5
 ```
 
-The next 8 commands will run experiments for all compatible analysis tool/benchmark combinations using Strategy II, including Soot, FlowDroid, Amandroid, and TAJS.
+The next 8 commands will run experiments for all compatible analysis tool/benchmark combinations using Strategy II, including Soot, FlowDroid, Amandroid, and TAJS. Alternatively, you can execute the shell script `run_all_s2.sh`.
 
 ```commandline
 dispatcher -t flowdroid -b droidbench --task taint -j 10 -i 5 --timeout 5 --results ./results_II --nondex
@@ -393,7 +393,7 @@ The results from all the above experiments correspond to those presented in Tabl
 
 ### Post-processing Results
 
-We provide two post-processing scripts to further analyze the results.
+As described in the We provide two post-processing scripts to further analyze the results.
 
 First, navigate to the `scripts/analysis` directory.
 
