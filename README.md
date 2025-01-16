@@ -326,7 +326,6 @@ Each command generates a CSV file named `<tool>_<benchmark>.csv` or `<tool>_<ben
 
 ### Replicating Major Paper Results
 
-The following 24 commands will run experiments for all tool/benchmark combinations using Strategy I, excluding PyCG. Alternatively, you can execute the shell script `run_all_s1.sh`. 
 Replicating the major results from the paper is expected to require thousands of hours of machine time and significant system memory. Please ensure that sufficient computing resources are available before running these commands. For reference, the experiments in our paper were conducted on two servers:  
 
 - *Server 1*: 384GB of RAM, 2 Intel Xeon Gold 5218 16-core CPUs @ 2.30GHz.  
@@ -334,6 +333,8 @@ Replicating the major results from the paper is expected to require thousands of
 
 *Note that as of this writing, PyCG experiments cannot be replicated due to errors encountered when running PyCG on the Ubuntu system. 
 We haven't been able able to fix it because PyCG has been archived and is no longer maintained by its development team.*
+
+The following 24 commands will run experiments for all tool/benchmark combinations using Strategy I, excluding PyCG. Alternatively, you can execute the shell script `run_all_s1.sh`. 
 
 ```commandline
 dispatcher -t flowdroid -b droidbench --task taint -j 10 -i 5 --timeout 5
