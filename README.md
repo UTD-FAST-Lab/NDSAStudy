@@ -322,7 +322,7 @@ python post_process.py --path ../../results/non_determinism soot icse25-ezcats
 # if any additional nondeterminism is detected by running SOOT on icse25-ezcats using Strategy II
 python post_process.py --path ./results/non_determinism_2 soot icse25-ezcats --nondex
 ```
-Each command generates a CSV file named `<tool>_<benchmark>.csv` or `<tool>_<benchmark>_nondex.csv` in the `scripts/analysis/results/postprocess` folder (if the provided nondeterminism folder exists). It calculates the percentage of consistent results and the number of distinct results.
+Each command generates a CSV file named `<tool>_<benchmark>.csv` or `<tool>_<benchmark>_nondex.csv` in the `scripts/analysis/results/postprocess` folder (*if the provided nondeterminism folder exists*). It calculates the percentage of consistent results and the number of distinct results.
 
 ### Replicating Major Paper Results
 
@@ -373,7 +373,7 @@ dispatcher -t code2flow -b pycg-micro --task cg -j 10 -i 10 --timeout 5
 dispatcher -t code2flow -b pycg-macro --task cg -j 10 -i 10 --timeout 5
 ```
 
-The next 8 commands will run experiments for all compatible analysis tool/benchmark combinations using Strategy II, including Soot, FlowDroid, Amandroid, and TAJS. Alternatively, you can execute the shell script `run_all_s2.sh`.
+The next 8 commands will run experiments for all compatible analysis tool/benchmark combinations using Strategy II. This includes running Soot, FlowDroid, Amandroid, and TAJS on their respective benchmarks. Alternatively, you can execute the shell script `run_all_s2.sh`.
 
 ```commandline
 dispatcher -t flowdroid -b droidbench --task taint -j 10 -i 5 --timeout 5 --results ./results_II --nondex
@@ -397,7 +397,7 @@ python detector_strategy_2.py --origin <path-to-strategy-I-results-folder> --non
 ```
 This command outputs the detected additional nondeterminisms to the `scripts/analysis/results/non_determinism_2` folder.
 
-We run this script for all compatible analysis tool/benchmark combinations for Strategy II, as described in the previous section.
+We run this script for all compatible analysis tool/benchmark combinations for Strategy II. This includes running Soot, FlowDroid, Amandroid, and TAJS on their respective benchmarks.
 
 The results from all the above steps correspond to those presented in Tables V and VI.
 
