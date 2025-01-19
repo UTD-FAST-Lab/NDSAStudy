@@ -32,7 +32,7 @@ Purpose: a brief description of what the artifact does.
 This artifact contains the code and data for the paper titled ***An Extensive 
 Empirical Study of Nondeterministic Behavior in Static Analysis Tools***.
 
-The `code` directory contains the zipped source code of the non-determinism detection 
+The `code` directory contains the source code of the non-determinism detection 
 toolchain (*NDDetector*) used in RQ2. 
 
 The `data` directory contains files that support the conclusions made in the two research 
@@ -107,7 +107,7 @@ the artifact for execution. This includes:
   reasonably justified.
 -->
 
-The `code` directory contains the zipped source code of the non-determinism detection 
+The `code` directory contains the source code of the non-determinism detection 
 toolchain (*NDDetector*) used in RQ2.
 
 *NDDetector* is a flexible tool that can be used to detect non-deterministic behaviors in configurable static analysis on a variety of benchmarks. 
@@ -118,7 +118,7 @@ taint analysis on Android applications using FlowDroid, AmanDroid, and DroidSafe
 
 - Hardware: This artifact works on Windows, Intel/Apple Silicon Macs, and Linux systems running Intel processors. 
 - Software:
-  - A Python executable of at least version 3.10, including the venv and development packages (`python3.XX-dev` and `python3.XX-venv` on Ubuntu). 
+  - A Python executable of version 3.10.x, including the venv and development packages (`python3.XX-dev` and `python3.XX-venv` on Ubuntu). 
 Note that if you installed via `brew` or the Windows installer, your Python should already have these.
   - A C and C++ compiler, e.g., `gcc` and `g++`.
   - GNU `Make`
@@ -127,7 +127,7 @@ Note that if you installed via `brew` or the Windows installer, your Python shou
 For example, setting up these dependencies on Ubuntu 22.04 looks like:
 
 ```commandline
-sudo apt install python3.11 python3.11-dev python3.11-venv g++ gcc make cmake
+sudo apt install python3.10 python3.10-dev python3.10-venv g++ gcc make cmake
 ```
 In addition, you must have a working Docker installation (https://docs.docker.com/get-docker/).
 
@@ -135,7 +135,7 @@ In addition, you must have a working Docker installation (https://docs.docker.co
 
 To set up the nondeterminism detection framework, we recommend creating a virtual environment. 
 
-To do so, run
+To do so, navigate to the `code/NDDetector` folder and run
 
 `python -m venv <name_of_virtual_environment>`
 
