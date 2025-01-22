@@ -276,6 +276,7 @@ The results of non-determinism detection can be found in the `non_determinism` f
 This folder maintains all non-deterministic results across 5 iterations, each batch of results is stored under a folder named as `configration-hash_apk-name.apk.raw`.
 
 ***Note: Nondeterminisms may not be reproduced without running the software multiple times. And the detected nondeterminisms may vary across experiments for the same tool-benchmark pair.***
+
 In our example, one detected non-determinism is on `JavaThread2.apk` under configuration  `7b5480bdb06b2ff39ebfb2bcedd2f657`.
 
 #### Detecting Nondeterminism Using Strategy II
