@@ -116,13 +116,12 @@ taint analysis on Android applications using FlowDroid, AmanDroid, and DroidSafe
 
 ### Requirements
 
-- Hardware: This artifact works on Windows, Intel/Apple Silicon Macs, and Linux systems running Intel processors. 
+- Hardware: This artifact requires Linux or macOS systems with Intel processors to conduct the experiments.
 - Software:
   - A Python executable of version 3.10.x, including the venv and development packages (`python3.XX-dev` and `python3.XX-venv` on Ubuntu). 
 Note that if you installed via `brew` or the Windows installer, your Python should already have these.
   - A C and C++ compiler, e.g., `gcc` and `g++`.
   - GNU `Make`
-  - For ARM architectures (e.g., Apple Silicon), you may also require `CMake`.
 
 For example, setting up these dependencies on Ubuntu 22.04 looks like:
 
@@ -135,7 +134,11 @@ In addition, you must have a working Docker installation (https://docs.docker.co
 
 To set up the nondeterminism detection framework, we recommend creating a virtual environment. 
 
-To do so, navigate to the `code/NDDetector` folder and run
+To do so, navigate to the `code/NDDetector` folder:
+
+`cd code/NDDetector`
+
+Then, run: 
 
 `python -m venv <name_of_virtual_environment>`
 
@@ -215,7 +218,7 @@ We have provided small versions of the Droidbench and CATS Microbenchmark under 
 
 #### Detecting Nondeterminism Using Strategy I
 
-First, navigate to the `code/NDDetector` directory.
+First, ensure that you are in the `code/NDDetector` directory.
 
 Then, to run FlowDroid on `icse25-ezbench` using Strategy I (as discussed in Section IV.A.d in our paper), run the following command:
 
@@ -272,7 +275,7 @@ The results of non-determinism detection can be found in the `non_determinism` f
 
 This folder maintains all non-deterministic results across 5 iterations, each batch of results is stored under a folder named as `configration-hash_apk-name.apk.raw`.
 
-***Note: The detected nondeterminism may vary across experiments for the same tool-benchmark pair.***
+***Note: Nondeterminisms may not be reproduced without running the software multiple times. And the detected nondeterminisms may vary across experiments for the same tool-benchmark pair.***
 In our example, one detected non-determinism is on `JavaThread2.apk` under configuration  `7b5480bdb06b2ff39ebfb2bcedd2f657`.
 
 #### Detecting Nondeterminism Using Strategy II
