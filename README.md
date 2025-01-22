@@ -281,22 +281,27 @@ In our example, one detected non-determinism is on `JavaThread2.apk` under confi
 
 #### Detecting Nondeterminism Using Strategy II
 
-To run FlowDroid on `icse25-ezbench` using Strategy II (as discussed in Section IV.A.d in our paper), run the following command:
+To get the addtional nondeterminism using Strategy II (as discussed in Section IV.A.d in our paper), run FlowDroid on `icse25-ezbench` with NonDex enabled: 
 
 ```commandline
 # Expected running time is around 10-15 minutes.
 dispatcher -t flowdroid -b icse25-ezbench --tasks taint -i 5 --results ./results_II --nondex
 ```
-To run SOOT on `icse25-ezcats` using Strategy II, run the following command:
+To run SOOT on `icse25-ezcats` with NonDex enabled:
 
 ```commandline
 # Expected running time is around 60-90 minutes.
 dispatcher -t soot -b icse25-ezcats --tasks cg -i 5 --results ./results_II --nondex
 ```
-This will create a `results_II` folder. The results of non-determinism detection can be found in the `results_II/non_determinism` folder *(if any nondeterminism is detected)*.
+This will create a `results_II` folder which contains the new experiment results. 
 
-Then, navigate to the `scripts/analysis` directory. 
-The script `detector_strategy_2.py` is used to detect additional nondeterminisms from the Strategy II results (as discussed at the end of Section IV.A.d in our paper).
+***Note: The results in the `results_II/non_determinism` folder are not the final additional nondeterminism yet (detected by Strategy II, as discussed in Section IV.A.d in our paper).***
+
+To get the final addtional nondeterminism using Strategy II, navigate to the `scripts/analysis` directory:
+
+`cd scripts/analysis`
+
+The script `detector_strategy_2.py` is used to detect additional nondeterminisms from the new results (as discussed at the end of Section IV.A.d in our paper).
 
 Run the following commands to detect the additional nondeterminisms for FlowDroid and SOOT:
 
@@ -305,7 +310,7 @@ python detector_strategy_2.py --origin ../../results --nondex ../../results_II f
 python detector_strategy_2.py --origin ../../results --nondex ../../results_II soot icse25-ezcats cg 5
 ```
 
-These commands output the detected additional nondeterminisms to the `scripts/analysis/results/non_determinism_2` folder *(if any additional nondeterminism is detected)*.
+These commands output the detected additional nondeterminisms (using Strategy II) to the `scripts/analysis/results/non_determinism_2` folder *(if any additional nondeterminism is detected)*.
 
 #### Post-processing Results
 
