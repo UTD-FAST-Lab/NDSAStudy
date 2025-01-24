@@ -310,7 +310,7 @@ python detector_strategy_2.py --origin ../../results --nondex ../../results_nond
 python detector_strategy_2.py --origin ../../results --nondex ../../results_nondex soot icse25-ezcats cg 5
 ```
 
-These commands output the detected additional nondeterminisms (using Strategy II) to the `scripts/analysis/results/non_determinism_2` folder *(if any additional nondeterminism is detected)*.
+These commands output the detected additional nondeterminisms (using Strategy II) to the `results_II/non_determinism` folder within the `code/NDDetector` directory. *(if any additional nondeterminism is detected)*.
 
 #### Post-processing Results
 
@@ -323,13 +323,13 @@ Run the following commands to generate aggregated results for all nondeterminism
 python post_process.py --path ../../results/non_determinism flowdroid icse25-ezbench
 
 # if any additional nondeterminism is detected by running FlowDroid on icse25-ezbench using Strategy II
-python post_process.py --path ./results/non_determinism_2 flowdroid icse25-ezbench --nondex
+python post_process.py --path ../../results_II/non_determinism flowdroid icse25-ezbench --nondex
 
 # if any nondeterminism is detected by running SOOT on icse25-ezcats using Strategy I
 python post_process.py --path ../../results/non_determinism soot icse25-ezcats
 
 # if any additional nondeterminism is detected by running SOOT on icse25-ezcats using Strategy II
-python post_process.py --path ./results/non_determinism_2 soot icse25-ezcats --nondex
+python post_process.py --path ../../results_II/non_determinism soot icse25-ezcats --nondex
 ```
 Each command generates a CSV file named `<tool>_<benchmark>.csv` or `<tool>_<benchmark>_nondex.csv` in the `scripts/analysis/results/postprocess` folder (*if the provided nondeterminism folder exists*). It calculates the percentage of consistent results and the number of distinct results.
 
