@@ -285,17 +285,17 @@ To get the addtional nondeterminism using Strategy II (as discussed in Section I
 
 ```commandline
 # Expected running time is around 10-15 minutes.
-dispatcher -t flowdroid -b icse25-ezbench --tasks taint -i 5 --results ./results_II --nondex
+dispatcher -t flowdroid -b icse25-ezbench --tasks taint -i 5 --results ./results_nondex --nondex
 ```
 To run SOOT on `icse25-ezcats` with NonDex enabled:
 
 ```commandline
 # Expected running time is around 60-90 minutes.
-dispatcher -t soot -b icse25-ezcats --tasks cg -i 5 --results ./results_II --nondex
+dispatcher -t soot -b icse25-ezcats --tasks cg -i 5 --results ./results_nondex --nondex
 ```
-This will create a `results_II` folder which contains the new experiment results. 
+This will create a `results_nondex` folder which contains the new experiment results. 
 
-***Note: The results in the `results_II/non_determinism` folder are not the final additional nondeterminism yet (detected by Strategy II, as discussed in Section IV.A.d in our paper).***
+***Note: The results in the `results_nondex/non_determinism` folder are not yet the final additional nondeterminism detected by Strategy II, as discussed in Section IV.A.d of our paper.***
 
 To get the final addtional nondeterminism using Strategy II, navigate to the `scripts/analysis` directory:
 
@@ -306,8 +306,8 @@ The script `detector_strategy_2.py` is used to detect additional nondeterminisms
 Run the following commands to detect the additional nondeterminisms for FlowDroid and SOOT:
 
 ```
-python detector_strategy_2.py --origin ../../results --nondex ../../results_II flowdroid icse25-ezbench taint 5
-python detector_strategy_2.py --origin ../../results --nondex ../../results_II soot icse25-ezcats cg 5
+python detector_strategy_2.py --origin ../../results --nondex ../../results_nondex flowdroid icse25-ezbench taint 5
+python detector_strategy_2.py --origin ../../results --nondex ../../results_nondex soot icse25-ezcats cg 5
 ```
 
 These commands output the detected additional nondeterminisms (using Strategy II) to the `scripts/analysis/results/non_determinism_2` folder *(if any additional nondeterminism is detected)*.
