@@ -108,7 +108,7 @@ def diff_flowdroid(args):
 
     header = ['config', 'file', 'consistency', 'repetitions']   
     
-    output_path = Path('./results') / 'postprocess'
+    output_path = Path('../../postprocess')
     Path(output_path).mkdir(exist_ok=True, parents=True) 
     
     output_file = f'{output_path}/{args.tool}_{args.benchmark}.csv' if not args.nondex else f'{output_path}/{args.tool}_{args.benchmark}_nondex.csv'
@@ -279,7 +279,7 @@ def diff_parallel(args):
     
     header = ['config', 'file', 'consistency', 'repetitions']   
     
-    output_path = Path('./results') / 'postprocess'
+    output_path = Path('../../postprocess')
     Path(output_path).mkdir(exist_ok=True, parents=True) 
     
     output_file = f'{output_path}/{args.tool}_{args.benchmark}.csv' if not args.nondex else f'{output_path}/{args.tool}_{args.benchmark}_nondex.csv'

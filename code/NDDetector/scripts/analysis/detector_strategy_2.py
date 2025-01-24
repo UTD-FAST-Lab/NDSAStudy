@@ -15,7 +15,7 @@ def generate_comparable_results(tool, file, reader):
     
 
 def move_nd_files(origin, nondex, file, tool, benchmark, iteration):
-    output_path = Path('./results') / 'non_determinism_2' / tool / benchmark
+    output_path = Path('../../results_II') / 'non_determinism' / tool / benchmark
     Path(output_path).mkdir(exist_ok=True, parents=True)
     
     nd_dir_path_t = os.path.join(output_path, file)
