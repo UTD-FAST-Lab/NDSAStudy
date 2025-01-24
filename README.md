@@ -310,7 +310,7 @@ python detector_strategy_2.py --origin ../../results --nondex ../../results_nond
 python detector_strategy_2.py --origin ../../results --nondex ../../results_nondex soot icse25-ezcats cg 5
 ```
 
-These commands output the detected additional nondeterminisms (using Strategy II) to the `results_II/non_determinism` folder within the `code/NDDetector` directory. *(if any additional nondeterminism is detected)*.
+These commands output the detected additional nondeterminisms (using Strategy II) to the `results_II/non_determinism` folder within the `code/NDDetector` directory *(if any additional nondeterminism is detected)*.
 
 #### Post-processing Results
 
@@ -331,7 +331,7 @@ python post_process.py --path ../../results/non_determinism soot icse25-ezcats
 # if any additional nondeterminism is detected by running SOOT on icse25-ezcats using Strategy II
 python post_process.py --path ../../results_II/non_determinism soot icse25-ezcats --nondex
 ```
-Each command generates a CSV file named `<tool>_<benchmark>.csv` or `<tool>_<benchmark>_nondex.csv` in the `scripts/analysis/results/postprocess` folder (*if the provided nondeterminism folder exists*). It calculates the percentage of consistent results and the number of distinct results.
+Each command generates a CSV file named `<tool>_<benchmark>.csv` or `<tool>_<benchmark>_nondex.csv` in the `postprocess` folder within the `code/NDDetector` directory (*if the provided nondeterminism folder exists*). It calculates the percentage of consistent results and the number of distinct results.
 
 ### Replicating Major Paper Results
 
@@ -382,29 +382,29 @@ dispatcher -t code2flow -b pycg-micro --task cg -j 10 -i 10 --timeout 5
 dispatcher -t code2flow -b pycg-macro --task cg -j 10 -i 10 --timeout 5
 ```
 
-The next 8 commands will run experiments for all compatible analysis tool/benchmark combinations using Strategy II. This includes running Soot, FlowDroid, Amandroid, and TAJS on their respective benchmarks. Alternatively, you can execute the shell script `run_all_s2.sh`.
+The next 8 commands will run experiments for all compatible analysis tool/benchmark combinations with NonDex enabled. This includes running Soot, FlowDroid, Amandroid, and TAJS on their respective benchmarks. Alternatively, you can execute the shell script `run_all_s2.sh`.
 
 ```commandline
-dispatcher -t flowdroid -b droidbench --task taint -j 10 -i 5 --timeout 5 --results ./results_II --nondex
-dispatcher -t flowdroid -b fossdroid-all-apks --task taint -j 10 -i 5 --timeout 60 --results ./results_II --nondex
+dispatcher -t flowdroid -b droidbench --task taint -j 10 -i 5 --timeout 5 --results ./results_nondex --nondex
+dispatcher -t flowdroid -b fossdroid-all-apks --task taint -j 10 -i 5 --timeout 60 --results ./results_nondex --nondex
 
-dispatcher -t amandroid -b droidbench --task taint -j 10 -i 5 --timeout 5 --results ./results_II --nondex
-dispatcher -t amandroid -b fossdroid-all-apks --task taint -j 10 -i 5 --timeout 60 --results ./results_II --nondex
+dispatcher -t amandroid -b droidbench --task taint -j 10 -i 5 --timeout 5 --results ./results_nondex --nondex
+dispatcher -t amandroid -b fossdroid-all-apks --task taint -j 10 -i 5 --timeout 60 --results ./results_nondex --nondex
 
-dispatcher -t soot -b cats-microbenchmark --task cg -j 10 -i 5 --timeout 15 --results ./results_II --nondex
-dispatcher -t soot -b dacapo-2006 --task cg -j 10 -i 5 --timeout 120 --results ./results_II --nondex
+dispatcher -t soot -b cats-microbenchmark --task cg -j 10 -i 5 --timeout 15 --results ./results_nondex --nondex
+dispatcher -t soot -b dacapo-2006 --task cg -j 10 -i 5 --timeout 120 --results ./results_nondex --nondex
 
-dispatcher -t tajs -b sunspider_test --task cg -j 10 -i 10 --timeout 5 --results ./results_II --nondex
-dispatcher -t tajs -b jquery --task cg -j 10 -i 10 --timeout 120 --results ./results_II --nondex
+dispatcher -t tajs -b sunspider_test --task cg -j 10 -i 10 --timeout 5 --results ./results_nondex --nondex
+dispatcher -t tajs -b jquery --task cg -j 10 -i 10 --timeout 120 --results ./results_nondex --nondex
 ```
 Then, navigate to the `scripts/analysis` directory.
 
-Use the following command to detect additional nondeterminisms from the Strategy II results:
+Run the following command to detect additional nondeterminisms using Strategy II:
 
 ```
-python detector_strategy_2.py --origin <path-to-strategy-I-results-folder> --nondex <path-to-strategy-II-results-folder> <tool> <benchmark> <task> <iteration>
+python detector_strategy_2.py --origin <path-to-strategy-I-results-folder> --nondex <path-to-nondex-results-folder> <tool> <benchmark> <task> <iteration>
 ```
-This command outputs the detected additional nondeterminisms to the `scripts/analysis/results/non_determinism_2` folder.
+This command outputs the detected additional nondeterminisms to the `results_II/non_determinism` folder within the `code/NDDetector` directory.
 
 We run this script for all compatible analysis tool/benchmark combinations for Strategy II. This includes running Soot, FlowDroid, Amandroid, and TAJS on their respective benchmarks.
 
@@ -414,13 +414,13 @@ Next, run the following commands to aggregate Strategy I and II results for each
 
 ```
 # Aggregate Strategy I results.
-python post_process.py --path <path-to-non_determinism-folder> <tool> <benchmark>
+python post_process.py --path <path-to-strategy-I-non_determinism-folder> <tool> <benchmark>
 
 # Aggregate Strategy II results.
-python post_process.py --path <path-to-non_determinism-folder> <tool> <benchmark> --nondex
+python post_process.py --path <path-to-strategy-II-non_determinism-folder> <tool> <benchmark> --nondex
 ```
 
-Each command generates a CSV file in the `scripts/analysis/results/postprocess` folder, aggregating all results for the specified tool-benchmark pair. It also calculates the percentage of consistent results and the number of distinct results.
+Each command generates a CSV file in the `postprocess` folder within the `code/NDDetector` directory, aggregating all results for the specified tool-benchmark pair. It also calculates the percentage of consistent results and the number of distinct results.
 
 We run this command for every tool-benchmark pair for Strategy I and II, if its respective nondeterminism folder exists. These results are then consolidated into a single file: `ICSE2025_AGGREGATE_DATA.csv`.
 
