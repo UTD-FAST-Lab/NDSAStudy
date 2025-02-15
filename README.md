@@ -12,7 +12,7 @@
   - [Setup](#setup)
     - [Requirements](#requirements)
     - [Instructions](#instructions)
-      - [RQ1: Extract Issues and Commits](#rq1:-extract-issues-and-commits)
+      - [RQ1: Extract Issues and Commits](#rq1-extract-issues-and-commits)
       - [RQ2](#rq2)
   - [Usage](#usage)
     - [Basic Usage Example](#basic-usage-example)
