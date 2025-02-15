@@ -12,8 +12,8 @@
   - [Setup](#setup)
     - [Requirements](#requirements)
     - [Instructions](#instructions)
-      - [RQ1](#rq1-extract-issues-and-commits)
-      - [RQ2: Detect Nondeterminisms](#rq2-detect-nondeterminisms)
+      - [RQ1](#rq1-instructions)
+      - [RQ2](#rq2-instructions)
   - [Usage](#usage)
     - [Basic Usage Example](#basic-usage-example)
       - [Detecting Nondeterminism Using Strategy I](#detecting-nondeterminism-using-strategy-i)
@@ -139,7 +139,7 @@ In addition, you must have a working Docker installation (https://docs.docker.co
 
 ### Instructions
 
-#### RQ1: Extract Issues and Commits
+#### RQ1
 
 To extract the issues and commits from each tool's GitHub repository that are used in RQ1, follow the below steps:
 
@@ -151,7 +151,7 @@ Then install the Python dependencies, run:
 
 `python -m pip install -r requirements.txt`
 
-#### RQ2: Detect Nondeterminisms
+#### RQ2
 
 To set up the nondeterminism detection framework, we recommend creating a virtual environment. 
 
@@ -228,6 +228,12 @@ both:
 We provide smaller experiments to verify the functionality of the artifact in the `Basic Usage Example` section, as replicating the major paper results is expected to take thousands of hours of machine time.
 
 ### Basic Usage Example
+
+#### RQ1: Extracting GitHub Issues and Commits
+
+
+
+#### RQ2: Detecting Nondeterminisms
 
 We suggest artifact reviewers use FlowDroid or SOOT, as these tools are relatively faster and more likely to exhibit nondeterministic behaviors compare to other tools, which tend to be slower to build, require significant system memory, or are challenging for capturing nondeterminism.
 
