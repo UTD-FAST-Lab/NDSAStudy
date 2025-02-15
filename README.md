@@ -13,7 +13,7 @@
     - [Requirements](#requirements)
     - [Instructions](#instructions)
       - [RQ1: Extract Issues and Commits](#rq1-extract-issues-and-commits)
-      - [RQ2](#rq2)
+      - [RQ2: Detect Nondeterminisms](#rq2-detect-nondeterminisms)
   - [Usage](#usage)
     - [Basic Usage Example](#basic-usage-example)
       - [Detecting Nondeterminism Using Strategy I](#detecting-nondeterminism-using-strategy-i)
