@@ -12,6 +12,8 @@
   - [Setup](#setup)
     - [Requirements](#requirements)
     - [Instructions](#instructions)
+      - [RQ1](#rq1)
+      - [RQ2](#rq2)
   - [Usage](#usage)
     - [Basic Usage Example](#basic-usage-example)
       - [Detecting Nondeterminism Using Strategy I](#detecting-nondeterminism-using-strategy-i)
@@ -110,8 +112,10 @@ the artifact for execution. This includes:
   reasonably justified.
 -->
 
-The `code` directory contains the scripts to extract the issues and commits from each tool's GitHub repository and the source code of the non-determinism detection 
-toolchain (*NDDetector*) used in RQ2.
+The `code` directory includes two sub-directories, `Git_Extractor` and `NDDetector`.
+
+The scripts under `Git_Extractor` folder are used in RQ1 to extract the issues and commits from each tool's GitHub repository.  
+The source code under `NDDetector` folder is the non-determinism detection toolchain (*NDDetector*) used in RQ2.
 
 *NDDetector* is a flexible tool that can be used to detect non-deterministic behaviors in configurable static analysis on a variety of benchmarks. 
 *NDDetector* can be extended to use alternative analyses, but currently, it can run call graph analyses using WALA, SOOT, DOOP, OPAL, TAJS, PyCG, and Code2Flow, 
@@ -134,6 +138,20 @@ sudo apt install python3.10 python3.10-dev python3.10-venv g++ gcc make cmake
 In addition, you must have a working Docker installation (https://docs.docker.com/get-docker/).
 
 ### Instructions
+
+#### RQ1
+
+To extract the issues and commits from each tool's GitHub repository that are used in RQ1, follow the below steps:
+
+Navigate to the `code/Git_Extractor` folder:
+
+`cd code/Git_Extractor`
+
+Then install the Python dependencies, run: 
+
+`python -m pip install -r requirements.txt`
+
+#### RQ2
 
 To set up the nondeterminism detection framework, we recommend creating a virtual environment. 
 
