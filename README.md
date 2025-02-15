@@ -252,7 +252,7 @@ Run `python extractor.py` to start the issues and commits extraction.
 *Note: The extraction of issues and commits may take 1–2 hours to complete, and you may need to resume the process if it stops due to GitHub API limitations.*
 
 `python extractor.py` will create a database named `NdGit` on MongoDB Atlas, and output the extracted results as several csv files named `<tool>_issues.csv` or `<tool>_commits.csv`.
-These files will be stored in the results/<keyword> folder, organized by each keyword (concurrency, concurrent, determinism, deterministic, flakiness, flaky).
+These files will be stored in the `results/<keyword>` folder, organized by each keyword (concurrency, concurrent, determinism, deterministic, flakiness, flaky).
 
 To export the raw data from MongoDB, run `bash export.sh`. It will output the raw data of each tool repository as a json file named `<tool>_issues.json` or `<tool>_commits.json` in the current 
 directory. 
