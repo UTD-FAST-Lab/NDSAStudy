@@ -12,8 +12,8 @@
   - [Setup](#setup)
     - [Requirements](#requirements)
     - [Instructions](#instructions)
-      - [RQ1](#rq1-instructions)
-      - [RQ2](#rq2-instructions)
+      - [RQ1](#rq1-extract-issues-and-commits)
+      - [RQ2](#rq2-detect-nondeterminisms)
   - [Usage](#usage)
     - [Basic Usage Example](#basic-usage-example)
       - [RQ1](#rq1-extracting-github-issues-and-commits)
@@ -245,7 +245,7 @@ We have provided small versions of the Droidbench and CATS Microbenchmark under 
 - `icse25-ezbench` contains *JavaThread2.apk*.
 - `icse25-ezcats` contains *TC1.jar*.
 
-#### Detecting Nondeterminism Using Strategy I
+##### Detecting Nondeterminism Using Strategy I
 
 First, ensure that you are in the `code/NDDetector` directory.
 
@@ -264,7 +264,7 @@ dispatcher -t soot -b icse25-ezcats --tasks cg -i 5
 ```
 where `-i 5` can be configured to the number of iterations you wish to run. This will create a `results` folder. Details on how to read the contents of this folder are below.
 
-#### How to Read Output
+##### How to Read Output
 
 By default, the output will be stored in a *results* folder, but the location of the results can be controlled with the `--results-location` option.
 
@@ -308,7 +308,7 @@ This folder maintains all non-deterministic results across 5 iterations, each ba
 
 In our example, one detected non-determinism is on `JavaThread2.apk` under configuration  `7b5480bdb06b2ff39ebfb2bcedd2f657`.
 
-#### Detecting Nondeterminism Using Strategy II
+##### Detecting Nondeterminism Using Strategy II
 
 To get the addtional nondeterminism using Strategy II (as discussed in Section IV.A.d in our paper), run FlowDroid on `icse25-ezbench` with NonDex enabled: 
 
@@ -341,7 +341,7 @@ python detector_strategy_2.py --origin ../../results --nondex ../../results_nond
 
 These commands output the detected additional nondeterminisms (using Strategy II) to the `results_II/non_determinism` folder within the `code/NDDetector` directory *(if any additional nondeterminism is detected)*.
 
-#### Post-processing Results
+##### Post-processing Results
 
 In the `scripts/analysis` directory, the script `post_process.py` aggregates the detected nondeterminism results for each specified tool-benchmark pair for both strategies.
 
