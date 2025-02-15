@@ -79,7 +79,9 @@ In `rq1/` there are:
 
 `RQ1_ND_PATTERN_LIST.pdf` - Contains 9 distinct common patterns of nondeterminism, each pattern is described with a pattern ID, description, solution, occurrence in each tool, related results, and a code example.
 
-`raw_data.zip` - Contains the raw commits and issues extracted from 11 repositories (SOOT, DOOP, WALA, OPAL, FlowDroid, DroidSafe, AmanDroid, TAJS, Code2Flow, PyCG, Infer).
+`raw_data.zip` - Contains the raw commits and issues extracted from 11 repositories (SOOT, DOOP, WALA, OPAL, FlowDroid, DroidSafe, AmanDroid, TAJS, Code2Flow, PyCG, Infer). 
+
+*Note: There were 58 issues of Doop (as of the time this research was conducted) that are hosted on [BitBucket](https://bitbucket.org/yanniss/doop-deprecated/issues), as stated at the beginning of Section III of our paper. These issues are not included in `raw_data.zip` as BitBucket requires administrative access to the repository to export the issues.*
 
 `key_words_results.zip` - Contains the results extracted by each keyword (concurrency, concurrent, determinism, deterministic, flakiness, flaky) from the raw data.
 
