@@ -33,7 +33,7 @@ Purpose: a brief description of what the artifact does.
 This artifact contains the code and data for the paper titled ***An Extensive 
 Empirical Study of Nondeterministic Behavior in Static Analysis Tools***.
 
-The `code` directory contains the source code of the non-determinism detection 
+The `code` directory contains the scripts to extract the issues and commits from each tool's GitHub repository and the source code of the non-determinism detection 
 toolchain (*NDDetector*) used in RQ2. 
 
 The `data` directory contains files that support the conclusions made in the two research 
@@ -110,7 +110,7 @@ the artifact for execution. This includes:
   reasonably justified.
 -->
 
-The `code` directory contains the source code of the non-determinism detection 
+The `code` directory contains the scripts to extract the issues and commits from each tool's GitHub repository and the source code of the non-determinism detection 
 toolchain (*NDDetector*) used in RQ2.
 
 *NDDetector* is a flexible tool that can be used to detect non-deterministic behaviors in configurable static analysis on a variety of benchmarks. 
