@@ -12,7 +12,7 @@
   - [Setup](#setup)
     - [Requirements](#requirements)
     - [Instructions](#instructions)
-      - [RQ1](#rq1)
+      - [RQ1: Extract Issues and Commits](#rq1:-extract-issues-and-commits)
       - [RQ2](#rq2)
   - [Usage](#usage)
     - [Basic Usage Example](#basic-usage-example)
@@ -139,7 +139,7 @@ In addition, you must have a working Docker installation (https://docs.docker.co
 
 ### Instructions
 
-#### RQ1
+#### RQ1: Extract Issues and Commits
 
 To extract the issues and commits from each tool's GitHub repository that are used in RQ1, follow the below steps:
 
@@ -151,7 +151,7 @@ Then install the Python dependencies, run:
 
 `python -m pip install -r requirements.txt`
 
-#### RQ2
+#### RQ2: Detect Nondeterminisms
 
 To set up the nondeterminism detection framework, we recommend creating a virtual environment. 
 
