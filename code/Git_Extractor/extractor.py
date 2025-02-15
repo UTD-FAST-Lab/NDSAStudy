@@ -81,32 +81,30 @@ def search_for_key_issues(search_key, tool):
                                              {'body': {"$regex": search_key}},
                                              {'comments': {"$regex": search_key}}]}))
 
-   Path(f'../results/{search_key}').mkdir(exist_ok=True, parents=True)
+   Path(f'./results/{search_key}').mkdir(exist_ok=True, parents=True)
    docs = pd.DataFrame(documents)
-   docs.to_csv(f'../results/{search_key}/{tool}_issues.csv', index=False)
+   docs.to_csv(f'./results/{search_key}/{tool}_issues.csv', index=False)
 
 
 def search_for_key_commits(search_key, tool):
    collection = dbname[f'{tool}_commits']
    documents = list(collection.find({'message': {"$regex": search_key}}))
 
-   Path(f'../results/{search_key}').mkdir(exist_ok=True, parents=True)
+   Path(f'./results/{search_key}').mkdir(exist_ok=True, parents=True)
    docs = pd.DataFrame(documents)
-   docs.to_csv(f'../results/{search_key}/{tool}_commits.csv', ',', index=False)
+   docs.to_csv(f'./results/{search_key}/{tool}_commits.csv', ',', index=False)
       
 
 def get_database():
  
    # Provide the mongodb atlas url to connect to mongodb database.
-   CONNECTION_STRING = "mongodb+srv://anna:xA123456@cluster0.csib9mh.mongodb.net/?retryWrites=true&w=majority"
-   
-   # os.environ['DB_CONNECTION_STRING']
+   CONNECTION_STRING = os.environ['DB_CONNECTION_STRING']
  
    # Create a connection using MongoClient. 
    client = MongoClient(CONNECTION_STRING)
  
    # Create the database for our project.
-   return client['NdGit-1']
+   return client['NdGit']
 
 if __name__ == "__main__":  
    
