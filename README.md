@@ -12,16 +12,12 @@
   - [Setup](#setup)
     - [Requirements](#requirements)
     - [Instructions](#instructions)
-      - [RQ1](#rq1-git_extractor)
-      - [RQ2](#rq2-nddetector)
   - [Usage](#usage)
     - [Basic Usage Example](#basic-usage-example)
-      - [RQ1](#rq1-extracting-github-issues-and-commits)
-      - [RQ2](#rq2-detecting-nondeterminisms)
-        - [Detecting Nondeterminism Using Strategy I](#detecting-nondeterminism-using-strategy-i)
-        - [How to Read Output](#how-to-read-output)
-        - [Detecting Nondeterminism Using Strategy II](#detecting-nondeterminism-using-strategy-ii)
-        - [Post-processing Results](#post-processing-results)
+      - [Detecting Nondeterminism Using Strategy I](#detecting-nondeterminism-using-strategy-i)
+      - [How to Read Output](#how-to-read-output)
+      - [Detecting Nondeterminism Using Strategy II](#detecting-nondeterminism-using-strategy-ii)
+      - [Post-processing Results](#post-processing-results)
     - [Replicating Major Paper Results](#replicating-major-paper-results)
     - [Troubleshooting](#troubleshooting)
     
@@ -37,7 +33,7 @@ Purpose: a brief description of what the artifact does.
 This artifact contains the code and data for the paper titled ***An Extensive 
 Empirical Study of Nondeterministic Behavior in Static Analysis Tools***.
 
-The `code` directory contains the scripts to extract the issues and commits from each tool's GitHub repository and the source code of the non-determinism detection 
+The `code` directory contains the source code of the non-determinism detection 
 toolchain (*NDDetector*) used in RQ2. 
 
 The `data` directory contains files that support the conclusions made in the two research 
@@ -87,7 +83,9 @@ In `rq1/` there are:
 
 *Note: There were 58 issues of Doop (as of the time this research was conducted) that are hosted on [BitBucket](https://bitbucket.org/yanniss/doop-deprecated/issues), as stated at the beginning of Section III of our paper. These issues are not included in `raw_data.zip` as BitBucket requires administrative access to the repository to export the issues.*
 
-`key_words_results.zip` - Contains the results extracted by each keyword (concurrency, concurrent, determinism, deterministic, flakiness, flaky) from the raw data.
+`key_words_results.zip` - Contains the results extracted by each keyword (concurrency, concurrent, determinism, deterministic, flakiness, flaky) from the raw data. 
+
+`scripts` - Contains scripts to extract the issues and commits from each tool's GitHub repository.
 
 ### RQ2
 
@@ -114,10 +112,7 @@ the artifact for execution. This includes:
   reasonably justified.
 -->
 
-The `code` directory includes two sub-directories, `Git_Extractor` and `NDDetector`.
-
-The scripts under `Git_Extractor` folder are used in RQ1 to extract the issues and commits from each tool's GitHub repository.  
-The source code under `NDDetector` folder is the non-determinism detection toolchain (*NDDetector*) used in RQ2.
+The `code` directory contains the source code of the non-determinism detection toolchain (*NDDetector*) used in RQ2.
 
 *NDDetector* is a flexible tool that can be used to detect non-deterministic behaviors in configurable static analysis on a variety of benchmarks. 
 *NDDetector* can be extended to use alternative analyses, but currently, it can run call graph analyses using WALA, SOOT, DOOP, OPAL, TAJS, PyCG, and Code2Flow, 
@@ -140,20 +135,6 @@ sudo apt install python3.10 python3.10-dev python3.10-venv g++ gcc make cmake
 In addition, you must have a working Docker installation (https://docs.docker.com/get-docker/).
 
 ### Instructions
-
-#### RQ1: Git_Extractor
-
-To extract the issues and commits from each tool's GitHub repository that are used in RQ1, follow the below steps:
-
-Navigate to the `code/Git_Extractor` folder:
-
-`cd code/Git_Extractor`
-
-Then install the Python dependencies, run: 
-
-`python -m pip install -r requirements.txt`
-
-#### RQ2: NDDetector
 
 To set up the nondeterminism detection framework used in RQ2, we recommend creating a virtual environment. 
 
@@ -230,34 +211,6 @@ both:
 We provide smaller experiments to verify the functionality of the artifact in the `Basic Usage Example` section, as replicating the major paper results is expected to take thousands of hours of machine time.
 
 ### Basic Usage Example
-
-#### RQ1: Extracting GitHub Issues and Commits
-
-As a prerequisite, you need to create a GitHub personal access token (see [GitHub Documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)) and a new project on MongoDB Atlas (see [MongoDB Documentation](https://www.mongodb.com/docs/atlas/tutorial/deploy-free-tier-cluster/).
-
-Next, add your GitHub personal access token and MongoDB connection strings as environment variables to `~/.bashrc`:
-
-```sh
-export GH_TOKEN=<gh_personal_access_token>
-export DB_CONNECTION_STRING=mongodb+srv://<db_username>:<db_password>@<clusterName>.mongodb.net/?retryWrites=true&w=majority
-export DB_CONNECTION_STRING_EXPORT=mongodb+srv://<db_username>:<db_password>@<clusterName>.mongodb.net
-```
-
-Close `~/.bashrc` and run `source ~/.bashrc` for the changes to take effect.
-
-Then, navigate to `code/Git_Extractor` directory. 
-
-Run `python extractor.py` to start the issues and commits extraction. 
-
-*Note: The extraction of issues and commits may take 1–2 hours to complete, and you may need to resume the process if it stops due to GitHub API limitations.*
-
-`python extractor.py` will create a database named `NdGit` on MongoDB Atlas, and output the extracted results as several csv files named `<tool>_issues.csv` or `<tool>_commits.csv`.
-These files will be stored in the `results/<keyword>` folder, organized by each keyword (concurrency, concurrent, determinism, deterministic, flakiness, flaky).
-
-To export the raw data from MongoDB, run `bash export.sh`. It will output the raw data of each tool repository as a json file named `<tool>_issues.json` or `<tool>_commits.json` in the current 
-directory. 
-
-#### RQ2: Detecting Nondeterminisms
 
 We suggest artifact reviewers use FlowDroid or SOOT, as these tools are relatively faster and more likely to exhibit nondeterministic behaviors compare to other tools, which tend to be slower to build, require significant system memory, or are challenging for capturing nondeterminism.
 
