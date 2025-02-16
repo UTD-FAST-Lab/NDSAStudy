@@ -346,7 +346,7 @@ dispatcher -t soot -b icse25-ezcats --tasks cg -i 5 --results ./results_nondex -
 ```
 This will create a `results_nondex` folder which contains the new experiment results. 
 
-***Note: The results in the `results_nondex/non_determinism` folder are not yet the final additional nondeterminism detected by Strategy II, as discussed in Section IV.A.d of our paper.***
+***Note: If no additional results are detected, the `results_nondex/non_determinism` folder will not be generated. And the results in the `results_nondex/non_determinism` folder are not yet the final additional nondeterminism detected by Strategy II, as discussed in Section IV.A.d of our paper.***
 
 To get the final addtional nondeterminism using Strategy II, navigate to the `scripts/analysis` directory:
 
